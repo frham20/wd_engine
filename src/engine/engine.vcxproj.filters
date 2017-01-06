@@ -14,5 +14,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wd.h" />
+    <ClInclude Include="core\timer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\types.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="wd_windows.h" />
   </ItemGroup>
 </Project>
