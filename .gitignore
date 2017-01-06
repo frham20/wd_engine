@@ -27,3 +27,8 @@
 *.exe
 *.out
 *.app
+/src/engine/x64/Debug
+/src/.vs/wd/v14
+/src/x64/Debug
+/src/wd.VC.VC.opendb
+/src/wd.VC.db
