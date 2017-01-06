@@ -32,3 +32,5 @@
 /src/x64/Debug
 /src/wd.VC.VC.opendb
 /src/wd.VC.db
+/bin/x64/Debug
+/obj/x64/Debug

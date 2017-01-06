@@ -2,5 +2,17 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="wd_pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="debug">
+      <UniqueIdentifier>{ac3f36cf-8c84-45bf-9eea-62d73313dfe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{412d71dd-97c8-4a64-9c1a-399ff23e6c66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wd.h" />
   </ItemGroup>
 </Project>
