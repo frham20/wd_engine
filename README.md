@@ -1,2 +1,3 @@
-# wd_engine
-WD Engine
+# WD Engine
+
+Small engine to test the Vulkan API
