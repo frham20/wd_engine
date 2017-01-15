@@ -18,10 +18,11 @@
 
 #endif//defined(WD_TARGET_DYNAMIC)
 
-
-
 #ifdef _DEBUG
 #define WD_TARGET_DEBUG
 #else
 #define WD_TARGET_RELEASE
 #endif
+
+//Acceptable warnings
+#pragma warning(disable: 4100) //warning C4100: 'xxxxx': unreferenced formal parameter
