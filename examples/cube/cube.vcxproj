@@ -88,7 +88,7 @@
     <ClCompile Include="cube.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\engine\engine.vcxproj">
+    <ProjectReference Include="..\..\src\wd_engine.vcxproj">
       <Project>{0d9e4909-295d-4513-a063-902e111f7cf7}</Project>
     </ProjectReference>
   </ItemGroup>

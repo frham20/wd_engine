@@ -43,3 +43,6 @@
 /src/ipch/WD_ENGINE-b71bfb4a
 *.db
 *.opendb
+/examples/.vs/wd_examples/v14
+/examples/cube/x64/Debug
+/examples/x64/Debug

@@ -10,7 +10,7 @@ constexpr double US_TO_S_FACTOR = 1.0 / 1'000'000.0;
 extern uint64 ticks_per_second;
 #endif
 
-uint64 get_time_us()
+inline uint64 get_time_us()
 {
 	#if defined(WD_PLATFORM_WINDOWS)
 	uint64 ticks;
