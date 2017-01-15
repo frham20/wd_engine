@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="wd_pch.cpp" />
     <ClCompile Include="core\wd_timer.cpp">
       <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="wd_dllmain.cpp">
+      <Filter>win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

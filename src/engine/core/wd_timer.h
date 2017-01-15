@@ -12,7 +12,7 @@ public:
 	double get_s() const;
 
 public:
-	static void init();
+	WDAPI static void init();
 
 private:
 	uint64 time_us;

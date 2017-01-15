@@ -35,3 +35,6 @@
 /bin/x64/Debug
 /obj/x64/Debug
 /src/ipch/ENGINE-f6f003a2
+/obj/x64/DynamicDebug
+/obj/x64
+/bin/x64

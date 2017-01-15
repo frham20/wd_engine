@@ -1,12 +1,15 @@
 #pragma once
 
 //platform detection
-#ifdef _WIN32
+#ifdef _WIN64
 #define WD_PLATFORM_WINDOWS
 #define WD_PLATFORM_MS
 #else
 #error Unssuported platform!
 #endif
+
+
+
 
 
 #if defined(WD_PLATFORM_WINDOWS)
