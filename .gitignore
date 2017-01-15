@@ -39,3 +39,7 @@
 /obj/x64
 /bin/x64
 /examples/cube/x64/Release
+/src/.vs/wd_engine/v14
+/src/ipch/WD_ENGINE-b71bfb4a
+*.db
+*.opendb
