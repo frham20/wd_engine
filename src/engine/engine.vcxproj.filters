@@ -3,6 +3,9 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="wd_pch.cpp" />
+    <ClCompile Include="core\wd_timer.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
@@ -11,15 +14,26 @@
     <Filter Include="core">
       <UniqueIdentifier>{412d71dd-97c8-4a64-9c1a-399ff23e6c66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\win">
+      <UniqueIdentifier>{17d21c94-9fab-4a04-89c5-12370ed2d155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win">
+      <UniqueIdentifier>{fcc60cf2-32ce-4cc4-aa80-6eef4e32a0e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wd.h" />
-    <ClInclude Include="core\timer.h">
+    <ClInclude Include="core\wd_timer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="core\types.h">
+    <ClInclude Include="core\wd_types.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="wd_windows.h" />
+    <ClInclude Include="win\wd_win.h">
+      <Filter>win</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_timer.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -104,7 +104,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WD_ENGINE_EXPORTS;WD_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WD_ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
@@ -139,7 +139,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WD_ENGINE_EXPORTS;WD_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WD_ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
@@ -152,6 +152,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core\wd_timer.cpp" />
+    <ClInclude Include="core\wd_timer.hpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="wd_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -161,10 +163,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core\timer.h" />
-    <ClInclude Include="core\types.h" />
+    <ClInclude Include="core\wd_timer.h" />
+    <ClInclude Include="core\wd_types.h" />
     <ClInclude Include="wd.h" />
-    <ClInclude Include="wd_windows.h" />
+    <ClInclude Include="win\wd_win.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
