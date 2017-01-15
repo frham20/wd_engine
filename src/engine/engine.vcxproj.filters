@@ -5,7 +5,7 @@
     <ClCompile Include="core\wd_timer.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="wd_dllmain.cpp">
+    <ClCompile Include="win\wd_dllmain_win.cpp">
       <Filter>win</Filter>
     </ClCompile>
   </ItemGroup>
