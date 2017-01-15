@@ -13,7 +13,7 @@ typedef unsigned short   uint16;
 typedef unsigned int     uint32;
 typedef unsigned __int64 uint64;
 
-typedef uint64 uint_ptr;
+typedef uint64 uintptr;
 
 #else
 
