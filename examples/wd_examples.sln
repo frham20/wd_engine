@@ -7,22 +7,40 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cube", "cube\cube.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wd_engine", "..\src\wd_engine.vcxproj", "{0D9E4909-295D-4513-A063-902E111F7CF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{D9322D4F-14EE-4E4D-A59A-801C66AF200F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "engine", "engine", "{8B4BF73D-A8FC-4F06-A1FE-CD773A9AC27A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		DynamicDebug|x64 = DynamicDebug|x64
+		DynamicRelease|x64 = DynamicRelease|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.Debug|x64.ActiveCfg = Debug|x64
 		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.Debug|x64.Build.0 = Debug|x64
+		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.DynamicDebug|x64.ActiveCfg = Debug|x64
+		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.DynamicDebug|x64.Build.0 = Debug|x64
+		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.DynamicRelease|x64.ActiveCfg = Release|x64
+		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.DynamicRelease|x64.Build.0 = Release|x64
 		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.Release|x64.ActiveCfg = Release|x64
 		{3C734E51-A8BD-4CD4-8586-8BF266AFC045}.Release|x64.Build.0 = Release|x64
 		{0D9E4909-295D-4513-A063-902E111F7CF7}.Debug|x64.ActiveCfg = Debug|x64
 		{0D9E4909-295D-4513-A063-902E111F7CF7}.Debug|x64.Build.0 = Debug|x64
+		{0D9E4909-295D-4513-A063-902E111F7CF7}.DynamicDebug|x64.ActiveCfg = DynamicDebug|x64
+		{0D9E4909-295D-4513-A063-902E111F7CF7}.DynamicDebug|x64.Build.0 = DynamicDebug|x64
+		{0D9E4909-295D-4513-A063-902E111F7CF7}.DynamicRelease|x64.ActiveCfg = DynamicRelease|x64
+		{0D9E4909-295D-4513-A063-902E111F7CF7}.DynamicRelease|x64.Build.0 = DynamicRelease|x64
 		{0D9E4909-295D-4513-A063-902E111F7CF7}.Release|x64.ActiveCfg = Release|x64
 		{0D9E4909-295D-4513-A063-902E111F7CF7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C734E51-A8BD-4CD4-8586-8BF266AFC045} = {D9322D4F-14EE-4E4D-A59A-801C66AF200F}
+		{0D9E4909-295D-4513-A063-902E111F7CF7} = {8B4BF73D-A8FC-4F06-A1FE-CD773A9AC27A}
 	EndGlobalSection
 EndGlobal

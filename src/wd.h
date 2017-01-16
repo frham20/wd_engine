@@ -14,8 +14,17 @@
 #endif
 
 
+//core
 #include "core\wd_types.h"
+#include "core\wd_noncopyable.h"
 #include "core\wd_timer.h"
+#include "core\wd_engine.h"
+
+//io
+
+//res
+
+//gfx
 
 
 #if !defined(WD_NO_TYPEALIASES)

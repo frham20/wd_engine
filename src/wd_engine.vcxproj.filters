@@ -8,6 +8,9 @@
     <ClCompile Include="win\wd_dllmain_win.cpp">
       <Filter>win</Filter>
     </ClCompile>
+    <ClCompile Include="core\wd_engine.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
@@ -22,6 +25,12 @@
     <Filter Include="win">
       <UniqueIdentifier>{fcc60cf2-32ce-4cc4-aa80-6eef4e32a0e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="io">
+      <UniqueIdentifier>{ead5b5fb-cdac-4a4f-9239-fa5be0d3801c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gfx">
+      <UniqueIdentifier>{0a1222fd-06c3-449e-b2d3-9dd37433d046}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wd.h" />
@@ -35,6 +44,12 @@
       <Filter>win</Filter>
     </ClInclude>
     <ClInclude Include="core\wd_timer.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_engine.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_noncopyable.h">
       <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>

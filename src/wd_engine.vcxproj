@@ -158,8 +158,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core\wd_engine.cpp" />
     <ClCompile Include="core\wd_timer.cpp" />
     <ClCompile Include="win\wd_dllmain_win.cpp" />
+    <ClInclude Include="core\wd_noncopyable.h" />
+    <ClInclude Include="core\wd_engine.h" />
     <ClInclude Include="core\wd_timer.hpp" />
     <ClCompile Include="wd_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">Create</PrecompiledHeader>

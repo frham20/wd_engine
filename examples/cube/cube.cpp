@@ -4,7 +4,8 @@
 
 int main(int argc, char** argv)
 {
-	wd::timer::init();
+	wd::engine engine;
+	engine.init();
 
 	wd::timer timer;
 	timer.start();
@@ -20,6 +21,8 @@ int main(int argc, char** argv)
 
 	getchar();
 
+
+	engine.close();
 
 	return 0;
 }
