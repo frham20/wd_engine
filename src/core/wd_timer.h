@@ -23,6 +23,10 @@ template<typename FN> uint64 time_us(FN fn);
 template<typename FN> double time_ms(FN fn);
 template<typename FN> double time_s(FN fn);
 
+template<typename FN, typename FNC> void time_us(FN fn, FNC then);
+template<typename FN, typename FNC> void time_ms(FN fn, FNC then);
+template<typename FN, typename FNC> void time_s(FN fn, FNC then);
+
 }//namespace wd
 
 #include "wd_timer.hpp"

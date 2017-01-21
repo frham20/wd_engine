@@ -75,7 +75,7 @@ double time_ms(FN fn)
 	return tm.get_ms();
 }
 
-template<typename FN> 
+template<typename FN>
 double time_s(FN fn)
 {
 	timer tm;
@@ -83,6 +83,24 @@ double time_s(FN fn)
 	fn();
 	tm.stop();
 	return tm.get_s();
+}
+
+template<typename FN, typename FNC>
+inline void time_us(FN fn, FNC then)
+{
+	then(time_us(fn));
+}
+
+template<typename FN, typename FNC>
+inline void time_ms(FN fn, FNC then)
+{
+	then(time_ms(fn));
+}
+
+template<typename FN, typename FNC> 
+inline void time_s(FN fn, FNC then)
+{
+	then(time_s(fn));
 }
 
 }//namespace wd
