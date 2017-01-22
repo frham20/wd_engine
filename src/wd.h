@@ -20,11 +20,16 @@
 #include "core\wd_timer.h"
 #include "core\wd_engine.h"
 
+//math
+#include "math\wd_point2.h"
+#include "math\wd_rect.h"
+
 //io
 
 //res
 
 //gfx
+#include "gfx\wd_window.h"
 
 
 #if !defined(WD_NO_TYPEALIASES)

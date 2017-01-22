@@ -178,6 +178,11 @@
   <ItemGroup>
     <ClInclude Include="core\wd_timer.h" />
     <ClInclude Include="core\wd_types.h" />
+    <ClInclude Include="gfx\wd_window.h" />
+    <ClInclude Include="math\wd_point2.h" />
+    <ClInclude Include="math\wd_point2.hpp" />
+    <ClInclude Include="math\wd_rect.h" />
+    <ClInclude Include="math\wd_rect.hpp" />
     <ClInclude Include="wd.h" />
     <ClInclude Include="win\wd_win.h" />
   </ItemGroup>
