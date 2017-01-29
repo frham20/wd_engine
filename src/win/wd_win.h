@@ -27,3 +27,10 @@
 //Acceptable warnings
 #pragma warning(disable: 4100) //warning C4100: 'xxxxx': unreferenced formal parameter
 #pragma warning(disable: 4458) //warning C4458 : declaration of 'xxxx' hides class member
+
+
+namespace wd {
+
+HINSTANCE platform_get_hinstance();
+
+}

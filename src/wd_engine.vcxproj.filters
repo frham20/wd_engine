@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="wd_pch.cpp" />
-    <ClCompile Include="win\wd_dllmain_win.cpp">
-      <Filter>win</Filter>
-    </ClCompile>
     <ClCompile Include="core\wd_engine.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -17,6 +14,10 @@
     <ClCompile Include="core\win\wd_engine_win.cpp">
       <Filter>core\win</Filter>
     </ClCompile>
+    <ClCompile Include="win\wd_win.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="core\win\wd_timer_win.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
