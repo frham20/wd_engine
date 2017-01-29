@@ -11,6 +11,9 @@
     <ClCompile Include="core\wd_engine.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="gfx\wd_window.cpp">
+      <Filter>gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
@@ -71,6 +74,15 @@
       <Filter>math</Filter>
     </ClInclude>
     <ClInclude Include="math\wd_rect.hpp">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\win\wd_window_win.h">
+      <Filter>gfx\win</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\wd_window.hpp">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="math\wd_vec2.h">
       <Filter>math</Filter>
     </ClInclude>
   </ItemGroup>

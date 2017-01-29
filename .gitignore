@@ -27,6 +27,12 @@
 *.exe
 *.out
 *.app
+
+
+*.db
+*.opendb
+*.vcxproj.user
+
 /src/engine/x64/Debug
 /src/.vs/wd/v14
 /src/x64/Debug
@@ -41,10 +47,9 @@
 /examples/cube/x64/Release
 /src/.vs/wd_engine/v14
 /src/ipch/WD_ENGINE-b71bfb4a
-*.db
-*.opendb
 /examples/.vs/wd_examples/v14
 /examples/cube/x64/Debug
 /examples/x64/Debug
 /lib/x64/Debug
 /examples/ipch/WD_ENGINE-b71bfb4a
+

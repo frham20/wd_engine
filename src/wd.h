@@ -13,6 +13,12 @@
 
 #endif
 
+//std
+#include <memory>
+#include <string>
+#include <vector>
+#include <algorithm>
+
 
 //core
 #include "core\wd_types.h"
@@ -22,6 +28,7 @@
 
 //math
 #include "math\wd_point2.h"
+#include "math\wd_vec2.h"
 #include "math\wd_rect.h"
 
 //io

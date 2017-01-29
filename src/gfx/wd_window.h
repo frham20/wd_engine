@@ -1,24 +1,38 @@
 #pragma once
 
+#if defined(WD_PLATFORM_WINDOWS)
+#include "win\wd_window_win.h"
+#else
+#error Unsupported platform
+#endif
+
 namespace wd {
 
-class window_base : private noncopyable
+class window : public window_platform
 {
 public:
+	window();
+	~window();
+	
+	WDAPI bool init(const char* title, const recti& region);
 
+	const char* get_title() const;
+	const recti& get_region() const;
 
-
-	uint32 get_width() const;
-	uint32 get_height() const;
-
-protected:
-	window_base();
-	~window_base();
+	void set_region(const recti& region);
+	void set_title(const char* title);
 
 private:
-	uint32 width;
-	uint32 height;
+	bool platform_init(const char* title, const recti& region);
+	bool platform_destroy();
+	void platform_set_region(const recti& region);
+	void platform_set_title(const char* title);
 
+private:
+	std::string title;
+	recti region;
 };
 
 }
+
+#include "wd_window.hpp"
