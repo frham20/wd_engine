@@ -17,7 +17,9 @@
     <ClCompile Include="win\wd_win.cpp">
       <Filter>win</Filter>
     </ClCompile>
-    <ClCompile Include="core\win\wd_timer_win.cpp" />
+    <ClCompile Include="core\win\wd_timer_win.cpp">
+      <Filter>core\win</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
