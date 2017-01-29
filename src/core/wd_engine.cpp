@@ -17,7 +17,7 @@ bool engine::init()
 	if (this->initialized)
 		return true;
 
-	timer::init();
+	platform_init();
 
 	this->initialized = true;
 
@@ -26,6 +26,8 @@ bool engine::init()
 
 bool engine::close()
 {
+	platform_close();
+
 	this->initialized = false;
 	return true;
 }

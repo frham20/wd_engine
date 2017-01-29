@@ -12,12 +12,15 @@ public:
 	double get_s() const;
 
 public:
-	WDAPI static void init();
 	static timer create();
 
 private:
 	uint64 time_us;
 };
+
+uint64 get_time_us();
+double get_time_ms();
+double get_time_s();
 
 template<typename FN> uint64 time_us(FN fn);
 template<typename FN> double time_ms(FN fn);

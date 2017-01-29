@@ -159,8 +159,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="core\wd_engine.cpp" />
-    <ClCompile Include="core\wd_timer.cpp" />
+    <ClCompile Include="core\win\wd_engine_win.cpp" />
     <ClCompile Include="gfx\wd_window.cpp" />
+    <ClCompile Include="gfx\win\wd_window_win.cpp" />
     <ClCompile Include="win\wd_dllmain_win.cpp" />
     <ClInclude Include="core\wd_noncopyable.h" />
     <ClInclude Include="core\wd_engine.h" />
@@ -179,6 +180,7 @@
   <ItemGroup>
     <ClInclude Include="core\wd_timer.h" />
     <ClInclude Include="core\wd_types.h" />
+    <ClInclude Include="core\win\wd_timer_win.hpp" />
     <ClInclude Include="gfx\wd_window.h" />
     <ClInclude Include="gfx\wd_window.hpp" />
     <ClInclude Include="gfx\win\wd_window_win.h" />

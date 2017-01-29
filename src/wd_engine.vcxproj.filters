@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="wd_pch.cpp" />
-    <ClCompile Include="core\wd_timer.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
     <ClCompile Include="win\wd_dllmain_win.cpp">
       <Filter>win</Filter>
     </ClCompile>
@@ -13,6 +10,12 @@
     </ClCompile>
     <ClCompile Include="gfx\wd_window.cpp">
       <Filter>gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\win\wd_window_win.cpp">
+      <Filter>gfx\win</Filter>
+    </ClCompile>
+    <ClCompile Include="core\win\wd_engine_win.cpp">
+      <Filter>core\win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="math\wd_vec2.h">
       <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="core\win\wd_timer_win.hpp">
+      <Filter>core\win</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

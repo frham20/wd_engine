@@ -10,6 +10,10 @@ public:
 	WDAPI bool close();
 
 private:
+	bool platform_init();
+	bool platform_close();
+
+private:
 	bool initialized;
 };
 

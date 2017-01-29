@@ -6,31 +6,34 @@ namespace _timer_internal {
 constexpr double US_TO_MS_FACTOR = 1.0 / 1'000.0;
 constexpr double US_TO_S_FACTOR = 1.0 / 1'000'000.0;
 
-#if defined(WD_PLATFORM_WINDOWS)
-extern uint64 ticks_per_second;
-#endif
+}//namespace _timer_internal
+
+uint64 platform_get_time_us();
 
 inline uint64 get_time_us()
 {
-	#if defined(WD_PLATFORM_WINDOWS)
-	uint64 ticks;
-	::QueryPerformanceCounter(reinterpret_cast<LARGE_INTEGER*>(&ticks));
-	return (ticks * 1'000'000) / ticks_per_second;
-	#endif
+	return platform_get_time_us();
 }
 
-}//namespace _timer_internal
+inline double get_time_ms()
+{
+	return static_cast<double>(get_time_us()) * _timer_internal::US_TO_MS_FACTOR;
+}
 
+inline double get_time_s()
+{
+	return static_cast<double>(get_time_us()) * _timer_internal::US_TO_S_FACTOR;
+}
 
 inline uint64 timer::start()
 {
-	this->time_us = _timer_internal::get_time_us();
+	this->time_us = get_time_us();
 	return this->time_us;
 }
 
 inline uint64 timer::stop()
 {
-	this->time_us = _timer_internal::get_time_us() - this->time_us;
+	this->time_us = get_time_us() - this->time_us;
 	return this->time_us;
 }
 
@@ -104,3 +107,7 @@ inline void time_s(FN fn, FNC then)
 }
 
 }//namespace wd
+
+#if defined(WD_PLATFORM_WINDOWS)
+#include "win\wd_timer_win.hpp"
+#endif
