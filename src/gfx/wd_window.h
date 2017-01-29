@@ -8,7 +8,7 @@
 
 namespace wd {
 
-class window : public window_platform
+class window : private noncopyable
 {
 public:
 	window();
@@ -29,6 +29,7 @@ private:
 	void platform_set_title(const char* title);
 
 private:
+	window_platform platform;
 	std::string title;
 	recti region;
 };

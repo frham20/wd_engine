@@ -2,12 +2,8 @@
 
 namespace wd {
 
-class window_platform
+struct window_platform
 {
-public:
-
-
-public:
 	HWND hwnd;
 };
 
