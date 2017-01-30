@@ -3,8 +3,6 @@
 namespace wd {
 
 namespace {
-
-	bool window_class_registered = false;
 	const char window_class_name[] = "wd_window";
 
 	LRESULT CALLBACK window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
