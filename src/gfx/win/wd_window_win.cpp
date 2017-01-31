@@ -17,6 +17,12 @@ namespace {
 				::SetWindowLongPtr(hwnd, 0, reinterpret_cast<LONG_PTR>(wnd));
 				return TRUE;
 			}
+		case WM_CLOSE:
+			{
+				//TO BE REMOVED
+				::PostQuitMessage(0);
+				break;
+			}
 		}
 
 
