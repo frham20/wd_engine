@@ -1,10 +1,9 @@
 #pragma once
 
-namespace wd {
-
-struct window_platform
+namespace wd 
 {
-	HWND hwnd;
-};
-
+	struct window_platform
+	{
+		HWND hwnd;
+	};
 }

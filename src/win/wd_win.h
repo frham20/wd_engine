@@ -29,8 +29,7 @@
 #pragma warning(disable: 4458) //warning C4458 : declaration of 'xxxx' hides class member
 
 
-namespace wd {
-
-HINSTANCE platform_get_hinstance();
-
+namespace wd 
+{
+	HINSTANCE platform_get_hinstance();
 }
