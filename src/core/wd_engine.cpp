@@ -2,11 +2,6 @@
 
 namespace wd 
 {
-	engine::engine() :
-		initialized(false)
-	{
-	}
-
 	engine::~engine()
 	{
 		close();

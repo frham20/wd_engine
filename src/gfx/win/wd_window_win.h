@@ -32,9 +32,9 @@ namespace wd
 		
 	private:
 		window& owner;
-		HWND hwnd;
-		std::string title;
-		recti region;
-		bool visible : 1;
+		HWND hwnd			= nullptr;
+		std::string title	= std::string("WD Window");
+		recti region		= recti(0,0,0,0);
+		bool visible		= false;
 	};
 }

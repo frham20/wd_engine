@@ -8,11 +8,7 @@ namespace wd
 	}	
 
 	window_platform::window_platform(window& _owner) :
-		owner(_owner),
-		region(0, 0, 0, 0),
-		title("WD Window"),
-		visible(false),
-		hwnd(nullptr)
+		owner(_owner)
 	{
 
 	}

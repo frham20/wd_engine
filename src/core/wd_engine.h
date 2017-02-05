@@ -4,7 +4,7 @@ namespace wd
 	class engine : private noncopyable
 	{
 	public:
-		WDAPI engine();
+		WDAPI engine() = default;
 		WDAPI ~engine();
 		WDAPI bool init();
 		WDAPI bool close();
@@ -18,6 +18,6 @@ namespace wd
 		bool platform_process_messages();
 
 	private:
-		bool initialized;
+		bool initialized = false;
 	};
 }
