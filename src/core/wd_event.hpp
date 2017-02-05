@@ -19,7 +19,8 @@ namespace wd
 	{
 		auto found_pos = std::find_if(std::begin(this->callbacks), std::end(this->callbacks), [&callback](const auto& fn)
 		{
-			return fn.target_type() == callback.target_type() && fn.target() == callback.target();
+			return fn.target_type() == callback.target_type() && 
+				fn.target<void(ARGS...)>() == callback.target<void(ARGS...)>();
 		});
 
 		if (found_pos != std::end(this->callbacks))

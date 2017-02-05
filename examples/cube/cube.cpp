@@ -23,6 +23,8 @@ int main(int argc, char** argv)
 	wnd.event_close += &on_main_window_close;
 	wnd.set_visible(true);
 
+	//wnd.event_close -= &on_main_window_close;
+
 	engine.run();
 	engine.close();
 

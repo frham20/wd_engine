@@ -13,7 +13,7 @@ namespace wd
 	public:
 		window();
 
-		WDAPI bool init(const char* title, const recti& region);
+		bool init(const char* title, const recti& region);
 
 		const char* get_title() const;
 		const recti& get_region() const;
