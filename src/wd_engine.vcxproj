@@ -164,6 +164,8 @@
     <ClCompile Include="gfx\wd_window.cpp" />
     <ClCompile Include="gfx\win\wd_window_win.cpp" />
     <ClCompile Include="win\wd_win.cpp" />
+    <ClInclude Include="core\wd_event.h" />
+    <ClInclude Include="core\wd_event.hpp" />
     <ClInclude Include="core\wd_noncopyable.h" />
     <ClInclude Include="core\wd_engine.h" />
     <ClInclude Include="core\wd_timer.hpp" />

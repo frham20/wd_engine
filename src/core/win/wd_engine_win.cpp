@@ -27,7 +27,7 @@ namespace wd {
 		if (!platform_timer_init())
 			return false;
 
-		if (!platform_window_init())
+		if (!window_platform::init())
 			return false;
 
 		return true;

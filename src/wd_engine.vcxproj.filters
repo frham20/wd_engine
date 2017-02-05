@@ -94,5 +94,7 @@
     <ClInclude Include="core\win\wd_timer_win.hpp">
       <Filter>core\win</Filter>
     </ClInclude>
+    <ClInclude Include="core\wd_event.h" />
+    <ClInclude Include="core\wd_event.hpp" />
   </ItemGroup>
 </Project>

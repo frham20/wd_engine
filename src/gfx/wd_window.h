@@ -12,7 +12,6 @@ namespace wd
 	{
 	public:
 		window();
-		~window();
 
 		WDAPI bool init(const char* title, const recti& region);
 
@@ -28,19 +27,12 @@ namespace wd
 		window_platform& get_platform();
 		const window_platform& get_platform() const;
 
-
-	private:
-		bool platform_init(const char* title, const recti& region);
-		bool platform_destroy();
-		void platform_set_region(const recti& region);
-		void platform_set_title(const char* title);
-		void platform_set_visible(bool state);
+		event<window&, bool&> event_close;
+		event<window&, recti&> event_resize;
+		event<window&, recti&> event_resizing;
 
 	private:
 		window_platform platform;
-		std::string title;
-		recti region;
-		bool visible : 1;
 	};
 }
 

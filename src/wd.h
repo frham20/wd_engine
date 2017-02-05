@@ -18,13 +18,16 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <functional>
 
 
 //core
 #include "core\wd_types.h"
 #include "core\wd_noncopyable.h"
 #include "core\wd_timer.h"
+#include "core\wd_event.h"
 #include "core\wd_engine.h"
+
 
 //math
 #include "math\wd_point2.h"

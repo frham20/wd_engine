@@ -1,52 +1,43 @@
 namespace wd 
 {
 	inline window::window() :
-		region(0, 0, 0, 0),
-		title("WD Window"),
-		visible(false)
+		platform(*this)
 	{
-
 	}
 
-	inline window::~window()
+	inline bool window::init(const char* title, const recti& region)
 	{
-		platform_destroy();
+		return this->platform.init(title, region);
 	}
 
 	inline const char* window::get_title() const
 	{
-		return this->title.c_str();
+		return this->platform.get_title();
 	}
 
 	inline const recti& window::get_region() const
 	{
-		return this->region;
+		return this->platform.get_region();
 	}
 
 	inline void window::set_region(const recti& region)
 	{
-		platform_set_region(region);
-		this->region = region;
+		this->platform.set_region(region);
 	}
 
 	inline void window::set_title(const char* title)
 	{
-		platform_set_title(title);
-		this->title = title;
+		this->platform.set_title(title);
 	}
 
 	inline bool window::is_visible() const
 	{
-		return this->visible;
+		return this->platform.is_visible();
 	}
 
 	inline void window::set_visible(bool state)
 	{
-		if (this->visible == state)
-			return;
-
-		platform_set_visible(state);
-		this->visible = state;
+		this->platform.set_visible(state);
 	}
 
 	inline window_platform& window::get_platform()
