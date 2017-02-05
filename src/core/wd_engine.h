@@ -1,10 +1,16 @@
 #pragma once
+#if defined(WD_PLATFORM_WINDOWS)
+#include "win\wd_engine_win.h"
+#else
+#error Unsupported platform
+#endif
+
 namespace wd 
 {
 	class engine : private noncopyable
 	{
 	public:
-		WDAPI engine() = default;
+		WDAPI engine();
 		WDAPI ~engine();
 		WDAPI bool init();
 		WDAPI bool close();
@@ -12,12 +18,11 @@ namespace wd
 		WDAPI void run();
 		WDAPI void do_frame(float delta_t);
 
-	private:
-		bool platform_init();
-		bool platform_close();
-		bool platform_process_messages();
+		engine_platform& get_platform();
+		const engine_platform& get_platform() const;
 
 	private:
+		engine_platform platform;
 		bool initialized = false;
 	};
 }

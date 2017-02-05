@@ -2,6 +2,12 @@
 
 namespace wd 
 {
+	engine::engine() :
+		platform(*this)
+	{
+
+	}
+
 	engine::~engine()
 	{
 		close();
@@ -12,7 +18,8 @@ namespace wd
 		if (this->initialized)
 			return true;
 
-		platform_init();
+		if (!this->platform.init())
+			return false;
 
 		this->initialized = true;
 
@@ -21,7 +28,8 @@ namespace wd
 
 	bool engine::close()
 	{
-		platform_close();
+		if (!this->platform.close())
+			return false;
 
 		this->initialized = false;
 		return true;
@@ -38,7 +46,7 @@ namespace wd
 		double starttime = get_time_s();
 		while (true)
 		{
-			if (!platform_process_messages())
+			if (!this->platform.process_messages())
 				break;
 
 			double delta_t = get_time_s() - starttime;
@@ -50,6 +58,16 @@ namespace wd
 			starttime = get_time_s();
 			do_frame(static_cast<float>(delta_t));
 		}
+	}
+
+	engine_platform& engine::get_platform()
+	{
+		return this->platform;
+	}
+
+	const engine_platform& engine::get_platform() const
+	{
+		return this->platform;
 	}
 
 }//namespace wd

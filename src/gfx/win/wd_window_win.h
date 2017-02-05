@@ -4,11 +4,11 @@ namespace wd
 {
 	class window;
 
-	class window_platform
+	class window_win
 	{
 	public:
-		explicit window_platform(window& owner);
-		~window_platform();
+		explicit window_win(window& owner);
+		~window_win();
 		
 		bool init(const char* title, const recti& region);
 
@@ -37,4 +37,6 @@ namespace wd
 		recti region		= recti(0,0,0,0);
 		bool visible		= false;
 	};
+
+	typedef window_win window_platform;
 }

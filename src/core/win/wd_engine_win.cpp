@@ -2,7 +2,6 @@
 
 namespace wd {
 
-	extern bool platform_window_init();
 	extern bool platform_timer_init();
 
 	namespace 
@@ -10,12 +9,18 @@ namespace wd {
 		HINSTANCE hinstance;
 	}
 
-	HINSTANCE platform_get_hinstance()
+	HINSTANCE engine_win::get_hinstance()
 	{
 		return hinstance;
 	}
 
-	bool engine::platform_init()
+	engine_win::engine_win(engine& _owner) :
+		owner(_owner)
+	{
+
+	}
+
+	bool engine_win::init()
 	{
 		//find hinstance of the module the engine is currently in
 		HMODULE module_handle;
@@ -27,18 +32,18 @@ namespace wd {
 		if (!platform_timer_init())
 			return false;
 
-		if (!window_platform::init())
+		if (!window_win::init())
 			return false;
 
 		return true;
 	}
 
-	bool engine::platform_close()
+	bool engine_win::close()
 	{
 		return true;
 	}
 
-	bool engine::platform_process_messages()
+	bool engine_win::process_messages()
 	{
 		bool quit = false;
 

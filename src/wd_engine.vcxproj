@@ -183,6 +183,7 @@
   <ItemGroup>
     <ClInclude Include="core\wd_timer.h" />
     <ClInclude Include="core\wd_types.h" />
+    <ClInclude Include="core\win\wd_engine_win.h" />
     <ClInclude Include="core\win\wd_timer_win.hpp" />
     <ClInclude Include="gfx\wd_window.h" />
     <ClInclude Include="gfx\wd_window.hpp" />
