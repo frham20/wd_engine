@@ -5,7 +5,7 @@
 
 #define WD_PLATFORM_WINDOWS
 #define WD_PLATFORM_MS
-#include "win\wd_win.h"
+#include "platform\win\wd_win.h"
 
 #else
 

@@ -1,6 +1,6 @@
 #pragma once
 #if defined(WD_PLATFORM_WINDOWS)
-#include "win\wd_engine_win.h"
+#include "platform\win\wd_engine_win.h"
 #else
 #error Unsupported platform
 #endif

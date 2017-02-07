@@ -8,17 +8,17 @@
     <ClCompile Include="gfx\wd_window.cpp">
       <Filter>gfx</Filter>
     </ClCompile>
-    <ClCompile Include="gfx\win\wd_window_win.cpp">
-      <Filter>gfx\win</Filter>
+    <ClCompile Include="platform\win\wd_engine_win.cpp">
+      <Filter>platform\win</Filter>
     </ClCompile>
-    <ClCompile Include="core\win\wd_engine_win.cpp">
-      <Filter>core\win</Filter>
+    <ClCompile Include="platform\win\wd_timer_win.cpp">
+      <Filter>platform\win</Filter>
     </ClCompile>
-    <ClCompile Include="win\wd_win.cpp">
-      <Filter>win</Filter>
+    <ClCompile Include="platform\win\wd_win.cpp">
+      <Filter>platform\win</Filter>
     </ClCompile>
-    <ClCompile Include="core\win\wd_timer_win.cpp">
-      <Filter>core\win</Filter>
+    <ClCompile Include="platform\win\wd_window_win.cpp">
+      <Filter>platform\win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -28,23 +28,20 @@
     <Filter Include="core">
       <UniqueIdentifier>{412d71dd-97c8-4a64-9c1a-399ff23e6c66}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\win">
-      <UniqueIdentifier>{17d21c94-9fab-4a04-89c5-12370ed2d155}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="win">
-      <UniqueIdentifier>{fcc60cf2-32ce-4cc4-aa80-6eef4e32a0e7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="io">
       <UniqueIdentifier>{ead5b5fb-cdac-4a4f-9239-fa5be0d3801c}</UniqueIdentifier>
     </Filter>
     <Filter Include="gfx">
       <UniqueIdentifier>{0a1222fd-06c3-449e-b2d3-9dd37433d046}</UniqueIdentifier>
     </Filter>
-    <Filter Include="gfx\win">
-      <UniqueIdentifier>{530b2811-a5d1-46ed-bc42-ecd9de10db8c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="math">
       <UniqueIdentifier>{b856ce8b-53d2-4473-ba06-3a9fdd5ec873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{cb3bf7d3-db0f-45dc-aa46-74f06f1d6b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\win">
+      <UniqueIdentifier>{fcc60cf2-32ce-4cc4-aa80-6eef4e32a0e7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,9 +51,6 @@
     </ClInclude>
     <ClInclude Include="core\wd_types.h">
       <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="win\wd_win.h">
-      <Filter>win</Filter>
     </ClInclude>
     <ClInclude Include="core\wd_timer.hpp">
       <Filter>core</Filter>
@@ -82,20 +76,23 @@
     <ClInclude Include="math\wd_rect.hpp">
       <Filter>math</Filter>
     </ClInclude>
-    <ClInclude Include="gfx\win\wd_window_win.h">
-      <Filter>gfx\win</Filter>
-    </ClInclude>
     <ClInclude Include="gfx\wd_window.hpp">
       <Filter>gfx</Filter>
     </ClInclude>
     <ClInclude Include="math\wd_vec2.h">
       <Filter>math</Filter>
     </ClInclude>
-    <ClInclude Include="core\win\wd_timer_win.hpp">
-      <Filter>core\win</Filter>
-    </ClInclude>
     <ClInclude Include="core\wd_event.h" />
     <ClInclude Include="core\wd_event.hpp" />
-    <ClInclude Include="core\win\wd_engine_win.h" />
+    <ClInclude Include="platform\win\wd_engine_win.h" />
+    <ClInclude Include="platform\win\wd_timer_win.hpp">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_win.h">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_window_win.h">
+      <Filter>platform\win</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

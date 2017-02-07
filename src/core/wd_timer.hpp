@@ -108,5 +108,5 @@ namespace wd {
 }//namespace wd
 
 #if defined(WD_PLATFORM_WINDOWS)
-#include "win\wd_timer_win.hpp"
+#include "platform\win\wd_timer_win.hpp"
 #endif

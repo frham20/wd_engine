@@ -159,11 +159,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="core\wd_engine.cpp" />
-    <ClCompile Include="core\win\wd_engine_win.cpp" />
-    <ClCompile Include="core\win\wd_timer_win.cpp" />
+    <ClCompile Include="platform\win\wd_engine_win.cpp" />
+    <ClCompile Include="platform\win\wd_timer_win.cpp" />
     <ClCompile Include="gfx\wd_window.cpp" />
-    <ClCompile Include="gfx\win\wd_window_win.cpp" />
-    <ClCompile Include="win\wd_win.cpp" />
+    <ClCompile Include="platform\win\wd_window_win.cpp" />
+    <ClCompile Include="platform\win\wd_win.cpp" />
     <ClInclude Include="core\wd_event.h" />
     <ClInclude Include="core\wd_event.hpp" />
     <ClInclude Include="core\wd_noncopyable.h" />
@@ -183,18 +183,18 @@
   <ItemGroup>
     <ClInclude Include="core\wd_timer.h" />
     <ClInclude Include="core\wd_types.h" />
-    <ClInclude Include="core\win\wd_engine_win.h" />
-    <ClInclude Include="core\win\wd_timer_win.hpp" />
+    <ClInclude Include="platform\win\wd_engine_win.h" />
+    <ClInclude Include="platform\win\wd_timer_win.hpp" />
     <ClInclude Include="gfx\wd_window.h" />
     <ClInclude Include="gfx\wd_window.hpp" />
-    <ClInclude Include="gfx\win\wd_window_win.h" />
+    <ClInclude Include="platform\win\wd_window_win.h" />
     <ClInclude Include="math\wd_point2.h" />
     <ClInclude Include="math\wd_point2.hpp" />
     <ClInclude Include="math\wd_rect.h" />
     <ClInclude Include="math\wd_rect.hpp" />
     <ClInclude Include="math\wd_vec2.h" />
     <ClInclude Include="wd.h" />
-    <ClInclude Include="win\wd_win.h" />
+    <ClInclude Include="platform\win\wd_win.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
