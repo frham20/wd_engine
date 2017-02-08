@@ -20,6 +20,8 @@
     <ClCompile Include="platform\win\wd_window_win.cpp">
       <Filter>platform\win</Filter>
     </ClCompile>
+    <ClCompile Include="gfx\wd_gfxmanager.cpp" />
+    <ClCompile Include="platform\win\wd_gfxmanager_win.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
@@ -94,5 +96,7 @@
     <ClInclude Include="platform\win\wd_window_win.h">
       <Filter>platform\win</Filter>
     </ClInclude>
+    <ClInclude Include="gfx\wd_gfxmanager.h" />
+    <ClInclude Include="platform\win\wd_gfxmanager_win.h" />
   </ItemGroup>
 </Project>

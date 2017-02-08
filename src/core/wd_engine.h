@@ -23,6 +23,7 @@ namespace wd
 
 	private:
 		engine_platform platform;
+		gfxmanager gfx;
 		bool initialized = false;
 	};
 }

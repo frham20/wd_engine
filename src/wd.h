@@ -19,6 +19,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <array>
 
 
 //core
@@ -26,8 +27,6 @@
 #include "core\wd_noncopyable.h"
 #include "core\wd_timer.h"
 #include "core\wd_event.h"
-#include "core\wd_engine.h"
-
 
 //math
 #include "math\wd_point2.h"
@@ -40,6 +39,10 @@
 
 //gfx
 #include "gfx\wd_window.h"
+#include "gfx\wd_gfxmanager.h"
+
+
+#include "core\wd_engine.h"
 
 
 #if !defined(WD_NO_TYPEALIASES)

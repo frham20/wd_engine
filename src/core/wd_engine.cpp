@@ -21,6 +21,9 @@ namespace wd
 		if (!this->platform.init())
 			return false;
 
+		if (!this->gfx.init())
+			return false;
+
 		this->initialized = true;
 
 		return true;
@@ -29,6 +32,9 @@ namespace wd
 	bool engine::close()
 	{
 		if (!this->platform.close())
+			return false;
+
+		if (!this->gfx.close())
 			return false;
 
 		this->initialized = false;
