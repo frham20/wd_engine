@@ -31,7 +31,22 @@ namespace wd
 
 	bool gfxmanager_platform::init_instance()
 	{
-		printf("Initializing Vulkan Instance...");
+		printf("=== Initializing Vulkan Instance ===\n");
+
+		//dump available extensions
+		uint32 ext_count = 0;
+		auto result = vkEnumerateInstanceExtensionProperties(nullptr, &ext_count, nullptr);
+		if (result != VK_SUCCESS)
+			return false;
+
+		std::vector<VkExtensionProperties> extensions(ext_count);
+		result = vkEnumerateInstanceExtensionProperties(nullptr, &ext_count, extensions.data());
+		if (result != VK_SUCCESS)
+			return false;
+
+		printf("VkInstance extensions found (%d):\n", ext_count);
+		for (auto& ext : extensions)
+			printf("\t%s\n", ext.extensionName);
 
 		//needed extensions
 		const char* vkextensions[] =
@@ -49,14 +64,11 @@ namespace wd
 		info.ppEnabledExtensionNames = vkextensions;
 		info.pApplicationInfo = nullptr;
 
-		auto result = vkCreateInstance(&info, nullptr, &this->vkinstance);
+		result = vkCreateInstance(&info, nullptr, &this->vkinstance);
 		if (result != VK_SUCCESS)
-		{
-			printf("ERROR\n");
 			return false;
-		}
 
-		printf("SUCCESS\n");
+		printf("=== SUCCESS ===\n");
 		
 		return true;
 	}
