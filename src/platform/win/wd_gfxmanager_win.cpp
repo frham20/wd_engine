@@ -2,18 +2,18 @@
 
 namespace wd
 {
-	gfxmanager_win::gfxmanager_win(gfxmanager& _owner) :
+	gfxmanager_platform::gfxmanager_platform(gfxmanager& _owner) :
 		owner(_owner)
 	{
 
 	}
 
-	gfxmanager_win::~gfxmanager_win()
+	gfxmanager_platform::~gfxmanager_platform()
 	{
 
 	}
 
-	bool gfxmanager_win::init()
+	bool gfxmanager_platform::init()
 	{
 		if (!init_instance())
 			return false;
@@ -24,12 +24,12 @@ namespace wd
 		return true;
 	}
 
-	bool gfxmanager_win::close()
+	bool gfxmanager_platform::close()
 	{
 		return true;
 	}
 
-	bool gfxmanager_win::init_instance()
+	bool gfxmanager_platform::init_instance()
 	{
 		printf("Initializing Vulkan Instance...");
 
@@ -61,7 +61,7 @@ namespace wd
 		return true;
 	}
 
-	bool gfxmanager_win::init_device()
+	bool gfxmanager_platform::init_device()
 	{
 		return true;
 	}

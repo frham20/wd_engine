@@ -2,13 +2,11 @@
 
 namespace wd
 {
-	class gfxmanager;
-
-	class gfxmanager_win : private noncopyable
+	class gfxmanager_platform : private noncopyable
 	{
 	public:
-		explicit gfxmanager_win(gfxmanager& owner);
-		~gfxmanager_win();
+		explicit gfxmanager_platform(gfxmanager& owner);
+		~gfxmanager_platform();
 
 		bool init();
 		bool close();
@@ -23,7 +21,4 @@ namespace wd
 		VkDevice   vkdevice;
 
 	};
-
-
-	typedef gfxmanager_win gfxmanager_platform;
 }

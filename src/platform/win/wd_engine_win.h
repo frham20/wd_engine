@@ -1,12 +1,11 @@
 #pragma once
+
 namespace wd
 {
-	class engine;
-
-	class engine_win : private noncopyable
+	class engine_platform : private noncopyable
 	{
 	public:
-		explicit engine_win(engine& owner);
+		explicit engine_platform(engine& owner);
 
 		bool init();
 		bool close();
@@ -17,6 +16,4 @@ namespace wd
 	private:
 		engine& owner;
 	};
-
-	typedef engine_win engine_platform;
 }

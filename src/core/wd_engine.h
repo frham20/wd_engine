@@ -1,12 +1,9 @@
 #pragma once
-#if defined(WD_PLATFORM_WINDOWS)
-#include "platform\win\wd_engine_win.h"
-#else
-#error Unsupported platform
-#endif
 
 namespace wd 
 {
+	class engine_platform;
+
 	class engine : private noncopyable
 	{
 	public:
@@ -22,8 +19,7 @@ namespace wd
 		const engine_platform& get_platform() const;
 
 	private:
-		engine_platform platform;
-		gfxmanager gfx;
-		bool initialized = false;
+		struct imp;
+		std::unique_ptr<imp> pimpl;
 	};
 }

@@ -1,4 +1,5 @@
 #include "wd.h"
+#include "wd_window_win.h"
 
 namespace wd {
 
@@ -9,18 +10,18 @@ namespace wd {
 		HINSTANCE hinstance;
 	}
 
-	HINSTANCE engine_win::get_hinstance()
+	HINSTANCE engine_platform::get_hinstance()
 	{
 		return hinstance;
 	}
 
-	engine_win::engine_win(engine& _owner) :
+	engine_platform::engine_platform(engine& _owner) :
 		owner(_owner)
 	{
 
 	}
 
-	bool engine_win::init()
+	bool engine_platform::init()
 	{
 		//find hinstance of the module the engine is currently in
 		HMODULE module_handle;
@@ -32,18 +33,18 @@ namespace wd {
 		if (!platform_timer_init())
 			return false;
 
-		if (!window_win::init())
+		if (!window_platform::init())
 			return false;
 
 		return true;
 	}
 
-	bool engine_win::close()
+	bool engine_platform::close()
 	{
 		return true;
 	}
 
-	bool engine_win::process_messages()
+	bool engine_platform::process_messages()
 	{
 		bool quit = false;
 

@@ -2,8 +2,15 @@
 
 namespace wd
 {
+	struct gfxmanager::imp
+	{
+		imp(gfxmanager& owner) : platform(owner) {}
+
+		gfxmanager_platform platform;
+	};
+
 	gfxmanager::gfxmanager() :
-		platform(*this)
+		pimpl(new imp(*this))
 	{
 
 	}
@@ -15,7 +22,7 @@ namespace wd
 
 	bool gfxmanager::init()
 	{
-		if (!this->platform.init())
+		if (!get_platform().init())
 			return false;
 
 		return true;
@@ -23,7 +30,7 @@ namespace wd
 
 	bool gfxmanager::close()
 	{
-		if (!this->platform.close())
+		if (!get_platform().close())
 			return false;
 
 		return true;
@@ -31,11 +38,11 @@ namespace wd
 
 	gfxmanager_platform& gfxmanager::get_platform()
 	{
-		return this->platform;
+		return this->pimpl->platform;
 	}
 
 	const gfxmanager_platform& gfxmanager::get_platform() const
 	{
-		return this->platform;
+		return this->pimpl->platform;
 	}
 }

@@ -1,17 +1,14 @@
 #pragma once
 
-#if defined(WD_PLATFORM_WINDOWS)
-#include "platform\win\wd_window_win.h"
-#else
-#error Unsupported platform
-#endif
-
 namespace wd
 {
+	class window_platform;
+
 	class window : private noncopyable
 	{
 	public:
 		window();
+		~window();
 
 		bool init(const char* title, const recti& region);
 
@@ -32,7 +29,8 @@ namespace wd
 		event<window&, recti&> event_resizing;
 
 	private:
-		window_platform platform;
+		struct imp;
+		std::unique_ptr<imp> pimpl;
 	};
 }
 

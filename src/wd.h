@@ -20,6 +20,7 @@
 #include <algorithm>
 #include <functional>
 #include <array>
+#include <type_traits>
 
 
 //core
@@ -45,6 +46,13 @@
 #include "core\wd_engine.h"
 
 
+
+//platform specific implementations
+#if defined(WD_PLATFORM_WINDOWS)
+#include "platform\win\wd_win_imp.h"
+#endif
+
+
 #if !defined(WD_NO_TYPEALIASES)
 using int8 = wd::int8;
 using int16 = wd::int16;
@@ -56,3 +64,5 @@ using uint32 = wd::uint32;
 using uint64 = wd::uint64;
 using uintptr = wd::uintptr;
 #endif
+
+

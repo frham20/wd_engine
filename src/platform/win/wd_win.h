@@ -37,4 +37,3 @@
 #pragma warning(disable: 4458) //warning C4458 : declaration of 'xxxx' hides class member
 #pragma warning(disable: 4180) //warning C4180 : qualifier applied to function type has no meaning; ignored
 
-

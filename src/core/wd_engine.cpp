@@ -2,8 +2,17 @@
 
 namespace wd 
 {
+	struct engine::imp
+	{
+		imp(engine& owner) : platform(owner) {}
+
+		engine_platform platform;
+		gfxmanager gfx;
+		bool initialized = false;
+	};
+
 	engine::engine() :
-		platform(*this)
+		pimpl(new imp(*this))
 	{
 
 	}
@@ -15,29 +24,29 @@ namespace wd
 
 	bool engine::init()
 	{
-		if (this->initialized)
+		if (this->pimpl->initialized)
 			return true;
 
-		if (!this->platform.init())
+		if (!get_platform().init())
 			return false;
 
-		if (!this->gfx.init())
+		if (!this->pimpl->gfx.init())
 			return false;
 
-		this->initialized = true;
+		this->pimpl->initialized = true;
 
 		return true;
 	}
 
 	bool engine::close()
 	{
-		if (!this->platform.close())
+		if (!get_platform().close())
 			return false;
 
-		if (!this->gfx.close())
+		if (!this->pimpl->gfx.close())
 			return false;
 
-		this->initialized = false;
+		this->pimpl->initialized = false;
 		return true;
 	}
 
@@ -52,7 +61,7 @@ namespace wd
 		double starttime = get_time_s();
 		while (true)
 		{
-			if (!this->platform.process_messages())
+			if (!get_platform().process_messages())
 				break;
 
 			double delta_t = get_time_s() - starttime;
@@ -68,12 +77,12 @@ namespace wd
 
 	engine_platform& engine::get_platform()
 	{
-		return this->platform;
+		return this->pimpl->platform;
 	}
 
 	const engine_platform& engine::get_platform() const
 	{
-		return this->platform;
+		return this->pimpl->platform;
 	}
 
 }//namespace wd

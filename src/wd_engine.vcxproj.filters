@@ -98,5 +98,6 @@
     </ClInclude>
     <ClInclude Include="gfx\wd_gfxmanager.h" />
     <ClInclude Include="platform\win\wd_gfxmanager_win.h" />
+    <ClInclude Include="platform\win\wd_win_imp.h" />
   </ItemGroup>
 </Project>
