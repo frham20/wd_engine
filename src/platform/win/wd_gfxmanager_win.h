@@ -14,9 +14,10 @@ namespace wd
 	private:
 		struct physical_device
 		{
-			VkPhysicalDevice device = VK_NULL_HANDLE;
+			VkPhysicalDevice handle = VK_NULL_HANDLE;
 			VkPhysicalDeviceFeatures features = {};
 			VkPhysicalDeviceProperties properties = {};
+			std::vector<VkQueueFamilyProperties> queue_families;
 		};
 
 	private:
@@ -31,6 +32,8 @@ namespace wd
 		gfxmanager& owner;
 		VkInstance instance	= VK_NULL_HANDLE;
 		VkDevice   device	= VK_NULL_HANDLE;
+		physical_device* current_physical_device = {};
 		std::vector<physical_device> physical_devices;
+		
 	};
 }
