@@ -46,10 +46,12 @@
 #include "core\wd_engine.h"
 
 
-
 //platform specific implementations
+//only used when compiling the engine itself
+#if defined(WD_ENGINE)
 #if defined(WD_PLATFORM_WINDOWS)
 #include "platform\win\wd_win_imp.h"
+#endif
 #endif
 
 

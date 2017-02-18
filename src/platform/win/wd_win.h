@@ -3,13 +3,10 @@
 #define NOMINMAX
 #include <windows.h>
 
-//don't expose vulkan to anything outside of this lib
-//not easy without losing perfs... need to hide class members in CPP files
-//need to think about this some more
-//#if defined(WD_ENGINE)
+#if defined(WD_ENGINE)
 	#define VK_USE_PLATFORM_WIN32_KHR
 	#include "vulkan\vulkan.h"
-//#endif
+#endif
 
 #if defined(WD_TARGET_DYNAMIC)
 

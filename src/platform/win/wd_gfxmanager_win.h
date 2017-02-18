@@ -19,6 +19,5 @@ namespace wd
 		gfxmanager& owner;
 		VkInstance vkinstance;
 		VkDevice   vkdevice;
-
 	};
 }
