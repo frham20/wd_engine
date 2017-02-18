@@ -1,5 +1,4 @@
 #include "wd.h"
-#include "wd_window_win.h"
 
 namespace wd
 {
