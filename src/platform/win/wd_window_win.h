@@ -2,7 +2,7 @@
 
 namespace wd 
 {
-	class window_platform
+	class window_platform : private noncopyable
 	{
 	public:
 		explicit window_platform(window& owner);

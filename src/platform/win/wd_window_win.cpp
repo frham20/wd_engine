@@ -5,7 +5,7 @@ namespace wd
 	namespace
 	{
 		constexpr const char window_class_name[] = "wd_window";
-	}	
+	}
 
 	window_platform::window_platform(window& _owner) :
 		owner(_owner)

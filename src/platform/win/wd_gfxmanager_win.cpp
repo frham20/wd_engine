@@ -2,6 +2,34 @@
 
 namespace wd
 {
+	//////////////////////////////////////////////////////////////////////////
+	// gfxmanager_platform::physical_device
+	//////////////////////////////////////////////////////////////////////////
+	struct gfxmanager_platform::physical_device
+	{
+		explicit physical_device(VkPhysicalDevice handle);
+
+		VkPhysicalDevice handle = VK_NULL_HANDLE;
+		VkPhysicalDeviceFeatures features = {};
+		VkPhysicalDeviceProperties properties = {};
+		std::vector<VkQueueFamilyProperties> queue_families;
+	};
+
+	gfxmanager_platform::physical_device::physical_device(VkPhysicalDevice _handle) :
+		handle(_handle)
+	{
+		vkGetPhysicalDeviceProperties(this->handle, &this->properties);
+		vkGetPhysicalDeviceFeatures(this->handle, &this->features);
+
+		uint32 queue_count = 0;
+		vkGetPhysicalDeviceQueueFamilyProperties(this->handle, &queue_count, nullptr);
+		this->queue_families.resize(queue_count);
+		vkGetPhysicalDeviceQueueFamilyProperties(this->handle, &queue_count, this->queue_families.data());
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+	// gfxmanager_platform
+	//////////////////////////////////////////////////////////////////////////
 	gfxmanager_platform::gfxmanager_platform(gfxmanager& _owner) :
 		owner(_owner)
 	{
@@ -21,6 +49,9 @@ namespace wd
 			return false;
 
 		if (!select_physical_device())
+			return false;
+
+		if (!select_queues())
 			return false;
 
 		if (!init_device())
@@ -100,30 +131,54 @@ namespace wd
 		if (result != VK_SUCCESS)
 			return false;
 
-		this->physical_devices.resize(device_count);
+		this->physical_devices.reserve(device_count);
 		for (uint32 i = 0; i < device_count; i++)
-			this->physical_devices[i].handle = devices[i];
-
-		printf("VkPhysicalDevice found (%d):\n", device_count);
-		for (auto& device : this->physical_devices)
 		{
-			vkGetPhysicalDeviceProperties(device.handle, &device.properties);
-			vkGetPhysicalDeviceFeatures(device.handle, &device.features);
-
-			uint32 queue_count = 0;
-			vkGetPhysicalDeviceQueueFamilyProperties(device.handle, &queue_count, nullptr);
-			device.queue_families.resize(queue_count);
-			vkGetPhysicalDeviceQueueFamilyProperties(device.handle, &queue_count, device.queue_families.data());
-
-			printf("\t%s\n", device.properties.deviceName);
+			auto phys_device = std::make_unique<physical_device>(devices[i]);
+			this->physical_devices.push_back(std::move(phys_device));
 		}
+
+		printf("Physical devices found (%d):\n", device_count);
+		for (auto& device : this->physical_devices)
+			printf("\t%s\n", device->properties.deviceName);
 
 		if (this->physical_devices.empty())
 			return false;
 
 		//select the most appropriate device for our needs
 		//TODO
-		this->current_physical_device = &this->physical_devices[0];
+		this->current_physical_device = this->physical_devices[0].get();
+		printf("Selected physical device: %s\n", this->current_physical_device->properties.deviceName);
+
+		return true;
+	}
+
+	bool gfxmanager_platform::select_queues()
+	{
+		//select the queues we need
+		uint32 transfer_queue_index = std::numeric_limits<uint32>::max();
+		uint32 compute_queue_index  = std::numeric_limits<uint32>::max();
+		uint32 graphics_queue_index = std::numeric_limits<uint32>::max();
+
+		const auto& queues = this->current_physical_device->queue_families;
+		const size_t queue_count = queues.size();
+		printf("Available queue families (%d):\n", static_cast<uint32>(queue_count));
+
+		for (uint32 i = 0; i < queue_count; i++)
+		{
+			const auto& queue = queues[i];
+			printf("\t%d: flags( 0x%08x ) count( %d )\n", i, queue.queueFlags, queue.queueCount);
+			
+			if (queue.queueFlags & VK_QUEUE_TRANSFER_BIT)
+				transfer_queue_index = i;
+
+			if (queue.queueFlags & VK_QUEUE_GRAPHICS_BIT)
+				graphics_queue_index = i;
+
+			if (queue.queueFlags & VK_QUEUE_COMPUTE_BIT)
+				compute_queue_index = i;
+		}
+
 
 		return true;
 	}
