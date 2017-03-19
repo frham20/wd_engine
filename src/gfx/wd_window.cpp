@@ -13,7 +13,7 @@ namespace wd
 	};
 
 	window::window() :
-		pimpl(new imp(*this))
+		m_pimpl(new imp(*this))
 	{
 	}
 
@@ -59,11 +59,11 @@ namespace wd
 
 	window_platform& window::get_platform()
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 
 	const window_platform& window::get_platform() const
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 }

@@ -26,29 +26,29 @@ namespace wd {
 
 	inline uint64 timer::start()
 	{
-		this->time_us = get_time_us();
-		return this->time_us;
+		m_time_us = get_time_us();
+		return m_time_us;
 	}
 
 	inline uint64 timer::stop()
 	{
-		this->time_us = get_time_us() - this->time_us;
-		return this->time_us;
+		m_time_us = get_time_us() - m_time_us;
+		return m_time_us;
 	}
 
 	inline uint64 timer::get_us() const
 	{
-		return this->time_us;
+		return m_time_us;
 	}
 
 	inline double timer::get_ms() const
 	{
-		return static_cast<double>(this->time_us) * _timer_internal::US_TO_MS_FACTOR;
+		return static_cast<double>(m_time_us) * _timer_internal::US_TO_MS_FACTOR;
 	}
 
 	inline double timer::get_s() const
 	{
-		return static_cast<double>(this->time_us) *_timer_internal::US_TO_S_FACTOR;
+		return static_cast<double>(m_time_us) *_timer_internal::US_TO_S_FACTOR;
 	}
 
 	inline timer timer::create()

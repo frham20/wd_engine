@@ -19,21 +19,21 @@ namespace wd
 		bool init_instance();
 		bool init_device();
 		bool select_physical_device();
-		bool select_queues();
+		std::vector<VkDeviceQueueCreateInfo> select_queues();
 
 		physical_device& get_physical_device();
 		const physical_device& get_physical_device() const;
 
 	private:
-		gfxmanager& owner;
-		VkInstance instance	= VK_NULL_HANDLE;
-		VkDevice   device	= VK_NULL_HANDLE;
-		std::vector<std::unique_ptr<physical_device>> physical_devices;
-		physical_device* current_physical_device = {};
+		gfxmanager& m_owner;
+		VkInstance m_instance   = VK_NULL_HANDLE;
+		VkDevice m_device       = VK_NULL_HANDLE;
+		std::vector<std::unique_ptr<physical_device>> m_physical_devices;
 
-		VkQueue transfer_queue; //used for transfering data to the GPU
-		VkQueue compute_queue;  //used by compute shader operations
-		VkQueue graphic_queue;  //main render queue
+		physical_device* m_current_physical_device = {};
+		VkQueue m_transfer_queue= VK_NULL_HANDLE; //used to transfer data to the GPU
+		VkQueue m_compute_queue = VK_NULL_HANDLE; //used by compute shader operations
+		VkQueue m_graphic_queue = VK_NULL_HANDLE; //render queue
 		
 	};
 }

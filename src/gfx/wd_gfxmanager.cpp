@@ -10,7 +10,7 @@ namespace wd
 	};
 
 	gfxmanager::gfxmanager() :
-		pimpl(new imp(*this))
+		m_pimpl(new imp(*this))
 	{
 
 	}
@@ -38,11 +38,11 @@ namespace wd
 
 	gfxmanager_platform& gfxmanager::get_platform()
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 
 	const gfxmanager_platform& gfxmanager::get_platform() const
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 }

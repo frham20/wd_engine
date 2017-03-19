@@ -14,6 +14,6 @@ namespace wd
 		static HINSTANCE get_hinstance();
 
 	private:
-		engine& owner;
+		engine& m_owner;
 	};
 }

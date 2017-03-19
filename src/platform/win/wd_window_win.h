@@ -29,10 +29,10 @@ namespace wd
 		static LRESULT CALLBACK window_proc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 		
 	private:
-		window& owner;
-		HWND hwnd			= nullptr;
-		std::string title	= std::string("WD Window");
-		recti region		= recti(0,0,0,0);
-		bool visible		= false;
+		window& m_owner;
+		HWND m_hwnd         = nullptr;
+		std::string m_title = std::string("WD Window");
+		recti m_region      = recti(0,0,0,0);
+		bool m_visible      = false;
 	};
 }

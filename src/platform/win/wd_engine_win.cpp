@@ -14,8 +14,8 @@ namespace wd {
 		return hinstance;
 	}
 
-	engine_platform::engine_platform(engine& _owner) :
-		owner(_owner)
+	engine_platform::engine_platform(engine& owner) :
+		m_owner(owner)
 	{
 
 	}

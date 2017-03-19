@@ -30,6 +30,7 @@
 #include "core\wd_event.h"
 
 //math
+#include "math\wd_math.h"
 #include "math\wd_point2.h"
 #include "math\wd_vec2.h"
 #include "math\wd_rect.h"

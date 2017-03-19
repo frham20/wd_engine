@@ -7,8 +7,8 @@ namespace wd
 		constexpr const char window_class_name[] = "wd_window";
 	}
 
-	window_platform::window_platform(window& _owner) :
-		owner(_owner)
+	window_platform::window_platform(window& owner) :
+		m_owner(owner)
 	{
 
 	}
@@ -32,7 +32,7 @@ namespace wd
 		auto result = ::CreateWindowEx(exstyle, window_class_name, title, style,
 			region.left, region.top, region.width(), region.height(),
 			nullptr, nullptr, engine_platform::get_hinstance(), this);
-		if (result != this->hwnd)
+		if (result != m_hwnd)
 			return false;
 
 		return true;
@@ -40,9 +40,9 @@ namespace wd
 
 	bool window_platform::destroy()
 	{
-		if (this->hwnd != nullptr)
+		if (m_hwnd != nullptr)
 		{
-			if (!::DestroyWindow(this->hwnd))
+			if (!::DestroyWindow(m_hwnd))
 				return false;
 		}
 
@@ -52,34 +52,34 @@ namespace wd
 	void window_platform::set_region(const recti& region)
 	{
 		//TODO
-		this->region = region;
+		m_region = region;
 	}
 
 	void window_platform::set_title(const char* title)
 	{
-		::SetWindowText(this->hwnd, title);
-		this->title = title;
+		::SetWindowText(m_hwnd, title);
+		m_title = title;
 	}
 
 	void window_platform::set_visible(bool state)
 	{
 		const int cmd = state ? SW_SHOW : SW_HIDE;
-		::ShowWindow(this->hwnd, cmd);
+		::ShowWindow(m_hwnd, cmd);
 	}
 
 	const char* window_platform::get_title() const
 	{
-		return this->title.c_str();
+		return m_title.c_str();
 	}
 
 	const recti& window_platform::get_region() const
 	{
-		return this->region;
+		return m_region;
 	}
 
 	bool window_platform::is_visible() const
 	{
-		return this->visible;
+		return m_visible;
 	}
 
 	LRESULT window_platform::handle_msg(UINT msg, WPARAM wparam, LPARAM lparam)
@@ -88,13 +88,13 @@ namespace wd
 		{
 		case WM_DESTROY:
 			{
-				this->hwnd = nullptr;
+				m_hwnd = nullptr;
 				break;
 			}
 		case WM_CLOSE:
 			{
 				bool allow = true;
-				this->owner.event_close(this->owner, allow);
+				m_owner.event_close(m_owner, allow);
 				if (!allow)
 					return 0;
 
@@ -102,7 +102,7 @@ namespace wd
 			}
 		}
 
-		return ::DefWindowProc(hwnd, msg, wparam, lparam);
+		return ::DefWindowProc(m_hwnd, msg, wparam, lparam);
 	}
 
 	bool window_platform::init()
@@ -136,7 +136,7 @@ namespace wd
 			{
 				auto cs = reinterpret_cast<LPCREATESTRUCT>(lparam);
 				wnd = static_cast<window_platform*>(cs->lpCreateParams);
-				wnd->hwnd = hwnd;
+				wnd->m_hwnd = hwnd;
 				::SetWindowLongPtr(hwnd, 0, reinterpret_cast<LONG_PTR>(wnd));
 			}
 			else

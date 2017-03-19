@@ -18,6 +18,6 @@ namespace wd
 
 	private:
 		struct imp;
-		std::unique_ptr<imp> pimpl;
+		std::unique_ptr<imp> m_pimpl;
 	};
 }

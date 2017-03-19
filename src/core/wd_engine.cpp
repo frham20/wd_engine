@@ -12,7 +12,7 @@ namespace wd
 	};
 
 	engine::engine() :
-		pimpl(new imp(*this))
+		m_pimpl(new imp(*this))
 	{
 
 	}
@@ -24,16 +24,16 @@ namespace wd
 
 	bool engine::init()
 	{
-		if (this->pimpl->initialized)
+		if (m_pimpl->initialized)
 			return true;
 
 		if (!get_platform().init())
 			return false;
 
-		if (!this->pimpl->gfx.init())
+		if (!m_pimpl->gfx.init())
 			return false;
 
-		this->pimpl->initialized = true;
+		m_pimpl->initialized = true;
 
 		return true;
 	}
@@ -43,10 +43,10 @@ namespace wd
 		if (!get_platform().close())
 			return false;
 
-		if (!this->pimpl->gfx.close())
+		if (!m_pimpl->gfx.close())
 			return false;
 
-		this->pimpl->initialized = false;
+		m_pimpl->initialized = false;
 		return true;
 	}
 
@@ -77,12 +77,12 @@ namespace wd
 
 	engine_platform& engine::get_platform()
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 
 	const engine_platform& engine::get_platform() const
 	{
-		return this->pimpl->platform;
+		return m_pimpl->platform;
 	}
 
 }//namespace wd

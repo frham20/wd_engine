@@ -15,7 +15,7 @@ namespace wd
 		static timer create();
 
 	private:
-		uint64 time_us;
+		uint64 m_time_us;
 	};
 
 	uint64 get_time_us();

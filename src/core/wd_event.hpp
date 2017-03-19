@@ -3,28 +3,28 @@ namespace wd
 	template<typename... ARGS>
 	inline void event<ARGS...>::operator()(ARGS&&... args) const
 	{
-		for (auto&& cb : this->callbacks)
+		for (auto&& cb : m_callbacks)
 			cb(std::forward<ARGS>(args)...);
 	}
 
 	template<typename... ARGS>
 	inline event<ARGS...>& event<ARGS...>::operator+=(const std::function<void(ARGS...)>& callback)
 	{
-		this->callbacks.emplace_back(callback);
+		m_callbacks.emplace_back(callback);
 		return *this;
 	}
 
 	template<typename... ARGS>
 	inline event<ARGS...>& event<ARGS...>::operator-=(const std::function<void(ARGS...)>& callback)
 	{
-		auto found_pos = std::find_if(std::begin(this->callbacks), std::end(this->callbacks), [&callback](const auto& fn)
+		auto found_pos = std::find_if(std::begin(m_callbacks), std::end(m_callbacks), [&callback](const auto& fn)
 		{
 			return fn.target_type() == callback.target_type() && 
 				fn.target<void(ARGS...)>() == callback.target<void(ARGS...)>();
 		});
 
-		if (found_pos != std::end(this->callbacks))
-			this->callbacks.erase(found_pos);
+		if (found_pos != std::end(m_callbacks))
+			m_callbacks.erase(found_pos);
 
 		return *this;
 	}
@@ -32,6 +32,6 @@ namespace wd
 	template<typename... ARGS>
 	inline void event<ARGS...>::clear()
 	{
-		this->callbacks.clear();
+		m_callbacks.clear();
 	}
 }

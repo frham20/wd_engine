@@ -13,7 +13,7 @@ namespace wd
 		void clear();
 
 	private:
-		std::vector<std::function<void(ARGS...)>> callbacks;
+		std::vector<std::function<void(ARGS...)>> m_callbacks;
 	};
 }
 

@@ -20,8 +20,12 @@
     <ClCompile Include="platform\win\wd_window_win.cpp">
       <Filter>platform\win</Filter>
     </ClCompile>
-    <ClCompile Include="gfx\wd_gfxmanager.cpp" />
-    <ClCompile Include="platform\win\wd_gfxmanager_win.cpp" />
+    <ClCompile Include="platform\win\wd_gfxmanager_win.cpp">
+      <Filter>platform\win</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\wd_gfxmanager.cpp">
+      <Filter>gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="debug">
@@ -84,9 +88,6 @@
     <ClInclude Include="math\wd_vec2.h">
       <Filter>math</Filter>
     </ClInclude>
-    <ClInclude Include="core\wd_event.h" />
-    <ClInclude Include="core\wd_event.hpp" />
-    <ClInclude Include="platform\win\wd_engine_win.h" />
     <ClInclude Include="platform\win\wd_timer_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
@@ -96,8 +97,29 @@
     <ClInclude Include="platform\win\wd_window_win.h">
       <Filter>platform\win</Filter>
     </ClInclude>
-    <ClInclude Include="gfx\wd_gfxmanager.h" />
-    <ClInclude Include="platform\win\wd_gfxmanager_win.h" />
-    <ClInclude Include="platform\win\wd_win_imp.h" />
+    <ClInclude Include="platform\win\wd_gfxmanager_win.h">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\wd_gfxmanager.h">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_engine_win.h">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="math\wd_math.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\wd_math.hpp">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_win_imp.h">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_event.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_event.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
