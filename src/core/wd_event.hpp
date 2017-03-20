@@ -1,3 +1,28 @@
+#pragma once
+
+//////////////////////////////////////////////////////////////////////////
+// event
+//////////////////////////////////////////////////////////////////////////
+namespace wd
+{
+	template<typename... ARGS>
+	class event
+	{
+	public:
+		void operator()(ARGS&&... args) const;
+		event& operator+=(const std::function<void(ARGS...)>& callback);
+		event& operator-=(const std::function<void(ARGS...)>& callback);
+
+		void clear();
+
+	private:
+		std::vector<std::function<void(ARGS...)>> m_callbacks;
+	};
+}
+
+//////////////////////////////////////////////////////////////////////////
+// imp
+//////////////////////////////////////////////////////////////////////////
 namespace wd
 {
 	template<typename... ARGS>
@@ -19,7 +44,7 @@ namespace wd
 	{
 		auto found_pos = std::find_if(std::begin(m_callbacks), std::end(m_callbacks), [&callback](const auto& fn)
 		{
-			return fn.target_type() == callback.target_type() && 
+			return fn.target_type() == callback.target_type() &&
 				fn.target<void(ARGS...)>() == callback.target<void(ARGS...)>();
 		});
 

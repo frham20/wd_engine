@@ -1,4 +1,4 @@
-#include "wd.h"
+#include "wd.hpp"
 #include <cstdio>
 
 namespace

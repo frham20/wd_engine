@@ -1,8 +1,5 @@
-#include "wd.h"
-#include "wd_window.h"
-
-#include "..\platform\win\wd_window_win.h"
-
+#include "wd.hpp"
+#include "wd_window.hpp"
 
 namespace wd 
 {

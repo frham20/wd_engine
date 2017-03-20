@@ -5,7 +5,7 @@
 
 #define WD_PLATFORM_WINDOWS
 #define WD_PLATFORM_MS
-#include "platform\win\wd_win.h"
+#include "platform\win\wd_win.hpp"
 
 #else
 
@@ -24,34 +24,34 @@
 
 
 //core
-#include "core\wd_types.h"
-#include "core\wd_noncopyable.h"
-#include "core\wd_timer.h"
-#include "core\wd_event.h"
+#include "core\wd_types.hpp"
+#include "core\wd_noncopyable.hpp"
+#include "core\wd_timer.hpp"
+#include "core\wd_event.hpp"
 
 //math
-#include "math\wd_math.h"
-#include "math\wd_point2.h"
-#include "math\wd_vec2.h"
-#include "math\wd_rect.h"
+#include "math\wd_math.hpp"
+#include "math\wd_point2.hpp"
+#include "math\wd_vec2.hpp"
+#include "math\wd_rect.hpp"
 
 //io
 
 //res
 
 //gfx
-#include "gfx\wd_window.h"
-#include "gfx\wd_gfxmanager.h"
+#include "gfx\wd_window.hpp"
+#include "gfx\wd_gfxmanager.hpp"
 
 
-#include "core\wd_engine.h"
+#include "core\wd_engine.hpp"
 
 
 //platform specific implementations
 //only used when compiling the engine itself
 #if defined(WD_ENGINE)
 #if defined(WD_PLATFORM_WINDOWS)
-#include "platform\win\wd_win_imp.h"
+#include "platform\win\wd_win_imp.hpp"
 #endif
 #endif
 

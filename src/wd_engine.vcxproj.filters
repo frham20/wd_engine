@@ -51,29 +51,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="wd.h" />
-    <ClInclude Include="core\wd_timer.h">
-      <Filter>core</Filter>
+    <ClInclude Include="platform\win\wd_timer_win.hpp">
+      <Filter>platform\win</Filter>
     </ClInclude>
-    <ClInclude Include="core\wd_types.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="core\wd_timer.hpp">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="core\wd_engine.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="core\wd_noncopyable.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\wd_window.h">
-      <Filter>gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="math\wd_rect.h">
-      <Filter>math</Filter>
-    </ClInclude>
-    <ClInclude Include="math\wd_point2.h">
+    <ClInclude Include="math\wd_math.hpp">
       <Filter>math</Filter>
     </ClInclude>
     <ClInclude Include="math\wd_point2.hpp">
@@ -82,40 +63,41 @@
     <ClInclude Include="math\wd_rect.hpp">
       <Filter>math</Filter>
     </ClInclude>
+    <ClInclude Include="math\wd_vec2.hpp">
+      <Filter>math</Filter>
+    </ClInclude>
     <ClInclude Include="gfx\wd_window.hpp">
       <Filter>gfx</Filter>
     </ClInclude>
-    <ClInclude Include="math\wd_vec2.h">
-      <Filter>math</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_timer_win.hpp">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_win.h">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_window_win.h">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_gfxmanager_win.h">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="gfx\wd_gfxmanager.h">
+    <ClInclude Include="gfx\wd_gfxmanager.hpp">
       <Filter>gfx</Filter>
     </ClInclude>
-    <ClInclude Include="platform\win\wd_engine_win.h">
+    <ClInclude Include="platform\win\wd_engine_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
-    <ClInclude Include="math\wd_math.h">
-      <Filter>math</Filter>
-    </ClInclude>
-    <ClInclude Include="math\wd_math.hpp">
-      <Filter>math</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_win_imp.h">
+    <ClInclude Include="platform\win\wd_gfxmanager_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
-    <ClInclude Include="core\wd_event.h">
+    <ClInclude Include="platform\win\wd_win.hpp">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_win_imp.hpp">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\wd_window_win.hpp">
+      <Filter>platform\win</Filter>
+    </ClInclude>
+    <ClInclude Include="wd.hpp" />
+    <ClInclude Include="core\wd_engine.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_noncopyable.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_timer.hpp">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\wd_types.hpp">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="core\wd_event.hpp">
