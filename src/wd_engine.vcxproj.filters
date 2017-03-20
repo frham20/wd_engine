@@ -103,6 +103,8 @@
     <ClInclude Include="core\wd_event.hpp">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="math\wd_vec3.hpp" />
+    <ClInclude Include="math\wd_vec3.hpp">
+      <Filter>math</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
