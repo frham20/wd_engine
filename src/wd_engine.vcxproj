@@ -196,6 +196,7 @@
     <ClInclude Include="core\wd_types.hpp" />
     <ClInclude Include="gfx\wd_gfxmanager.hpp" />
     <ClInclude Include="math\wd_math.hpp" />
+    <ClInclude Include="math\wd_vec3.hpp" />
     <ClInclude Include="platform\win\wd_engine_win.hpp" />
     <ClInclude Include="platform\win\wd_gfxmanager_win.hpp" />
     <ClInclude Include="platform\win\wd_timer_win.hpp" />

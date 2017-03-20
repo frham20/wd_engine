@@ -9,6 +9,9 @@ namespace wd
 	uint32 bit_count(uint32 value);
 	uint32 bit_count(uint16 value);
 	uint32 bit_count(uint8 value);
+
+	float  sqrt(float value);
+	double sqrt(double value);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -59,5 +62,15 @@ namespace wd
 			((value & 0x20) >> 5) +
 			((value & 0x40) >> 6) +
 			((value & 0x80) >> 7);
+	}
+
+	inline float sqrt(float value)
+	{
+		return std::sqrt(value);
+	}
+
+	inline double sqrt(double value)
+	{
+		return std::sqrt(value);
 	}
 }

@@ -21,6 +21,7 @@
 #include <functional>
 #include <array>
 #include <type_traits>
+#include <cassert>
 
 
 //core
@@ -33,6 +34,7 @@
 #include "math\wd_math.hpp"
 #include "math\wd_point2.hpp"
 #include "math\wd_vec2.hpp"
+#include "math\wd_vec3.hpp"
 #include "math\wd_rect.hpp"
 
 //io
