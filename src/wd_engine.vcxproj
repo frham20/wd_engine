@@ -98,7 +98,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,7 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -159,7 +159,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -170,12 +170,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="core\wd_engine.cpp" />
-    <ClCompile Include="gfx\wd_gfxmanager.cpp" />
+    <ClCompile Include="gfx\wd_gfx_manager.cpp" />
+    <ClCompile Include="platform\shared\vulkan\wd_gfx_physical_device_vk.cpp" />
     <ClCompile Include="platform\win\wd_engine_win.cpp" />
-    <ClCompile Include="platform\win\wd_gfxmanager_win.cpp" />
+    <ClCompile Include="platform\win\gfx\wd_gfx_manager_win.cpp" />
     <ClCompile Include="platform\win\wd_timer_win.cpp" />
     <ClCompile Include="gfx\wd_window.cpp" />
-    <ClCompile Include="platform\win\wd_window_win.cpp" />
+    <ClCompile Include="platform\win\gfx\wd_window_win.cpp" />
     <ClCompile Include="platform\win\wd_win.cpp" />
     <ClInclude Include="core\wd_event.hpp" />
     <ClInclude Include="core\wd_noncopyable.hpp" />
@@ -194,14 +195,15 @@
   <ItemGroup>
     <ClInclude Include="core\wd_timer.hpp" />
     <ClInclude Include="core\wd_types.hpp" />
-    <ClInclude Include="gfx\wd_gfxmanager.hpp" />
+    <ClInclude Include="gfx\wd_gfx_manager.hpp" />
     <ClInclude Include="math\wd_math.hpp" />
     <ClInclude Include="math\wd_vec3.hpp" />
+    <ClInclude Include="platform\shared\vulkan\wd_gfx_physical_device_vk.hpp" />
     <ClInclude Include="platform\win\wd_engine_win.hpp" />
-    <ClInclude Include="platform\win\wd_gfxmanager_win.hpp" />
+    <ClInclude Include="platform\win\gfx\wd_gfx_manager_win.hpp" />
     <ClInclude Include="platform\win\wd_timer_win.hpp" />
     <ClInclude Include="gfx\wd_window.hpp" />
-    <ClInclude Include="platform\win\wd_window_win.hpp" />
+    <ClInclude Include="platform\win\gfx\wd_window_win.hpp" />
     <ClInclude Include="math\wd_point2.hpp" />
     <ClInclude Include="math\wd_rect.hpp" />
     <ClInclude Include="math\wd_vec2.hpp" />

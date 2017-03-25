@@ -17,14 +17,17 @@
     <ClCompile Include="platform\win\wd_win.cpp">
       <Filter>platform\win</Filter>
     </ClCompile>
-    <ClCompile Include="platform\win\wd_window_win.cpp">
-      <Filter>platform\win</Filter>
-    </ClCompile>
-    <ClCompile Include="platform\win\wd_gfxmanager_win.cpp">
-      <Filter>platform\win</Filter>
-    </ClCompile>
-    <ClCompile Include="gfx\wd_gfxmanager.cpp">
+    <ClCompile Include="gfx\wd_gfx_manager.cpp">
       <Filter>gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="platform\win\gfx\wd_gfx_manager_win.cpp">
+      <Filter>platform\win\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="platform\win\gfx\wd_window_win.cpp">
+      <Filter>platform\win\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="platform\shared\vulkan\wd_gfx_physical_device_vk.cpp">
+      <Filter>platform\shared\vulkan</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +52,15 @@
     <Filter Include="platform\win">
       <UniqueIdentifier>{fcc60cf2-32ce-4cc4-aa80-6eef4e32a0e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platform\win\gfx">
+      <UniqueIdentifier>{a6869da0-5613-486a-ba7d-d42636b2f38c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\shared">
+      <UniqueIdentifier>{5132c541-0dd8-4783-b21a-8f9f336210be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\shared\vulkan">
+      <UniqueIdentifier>{7a5f291b-0234-4b28-bd37-ac3f642190a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="platform\win\wd_timer_win.hpp">
@@ -69,22 +81,13 @@
     <ClInclude Include="gfx\wd_window.hpp">
       <Filter>gfx</Filter>
     </ClInclude>
-    <ClInclude Include="gfx\wd_gfxmanager.hpp">
-      <Filter>gfx</Filter>
-    </ClInclude>
     <ClInclude Include="platform\win\wd_engine_win.hpp">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_gfxmanager_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
     <ClInclude Include="platform\win\wd_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
     <ClInclude Include="platform\win\wd_win_imp.hpp">
-      <Filter>platform\win</Filter>
-    </ClInclude>
-    <ClInclude Include="platform\win\wd_window_win.hpp">
       <Filter>platform\win</Filter>
     </ClInclude>
     <ClInclude Include="wd.hpp" />
@@ -105,6 +108,18 @@
     </ClInclude>
     <ClInclude Include="math\wd_vec3.hpp">
       <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\wd_gfx_manager.hpp">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\gfx\wd_gfx_manager_win.hpp">
+      <Filter>platform\win\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\win\gfx\wd_window_win.hpp">
+      <Filter>platform\win\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="platform\shared\vulkan\wd_gfx_physical_device_vk.hpp">
+      <Filter>platform\shared\vulkan</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

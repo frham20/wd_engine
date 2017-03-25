@@ -1,12 +1,13 @@
 #pragma once
-namespace wd 
+namespace wd
 {
 	class noncopyable
 	{
-	protected:
+	  protected:
 		noncopyable() = default;
-	private:
-		noncopyable(const noncopyable&) = delete;
-		noncopyable& operator=(const noncopyable&) = delete;
+
+	  private:
+		noncopyable( const noncopyable& ) = delete;
+		noncopyable& operator=( const noncopyable& ) = delete;
 	};
 }

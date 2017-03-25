@@ -43,7 +43,7 @@
 
 //gfx
 #include "gfx\wd_window.hpp"
-#include "gfx\wd_gfxmanager.hpp"
+#include "gfx\wd_gfx_manager.hpp"
 
 
 #include "core\wd_engine.hpp"

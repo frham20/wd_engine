@@ -1,20 +1,22 @@
 #include "wd.hpp"
 
-namespace wd 
+namespace wd
 {
 	struct engine::imp
 	{
-		imp(engine& owner) : platform(owner) {}
+		imp( engine& owner )
+		    : platform( owner )
+		{
+		}
 
 		engine_platform platform;
-		gfxmanager gfx;
-		bool initialized = false;
+		gfx_manager     gfx;
+		bool            initialized = false;
 	};
 
-	engine::engine() :
-		m_pimpl(new imp(*this))
+	engine::engine()
+	    : m_pimpl( new imp( *this ) )
 	{
-
 	}
 
 	engine::~engine()
@@ -24,13 +26,13 @@ namespace wd
 
 	bool engine::init()
 	{
-		if (m_pimpl->initialized)
+		if ( m_pimpl->initialized )
 			return true;
 
-		if (!get_platform().init())
+		if ( !get_platform().init() )
 			return false;
 
-		if (!m_pimpl->gfx.init())
+		if ( !m_pimpl->gfx.init() )
 			return false;
 
 		m_pimpl->initialized = true;
@@ -40,38 +42,38 @@ namespace wd
 
 	bool engine::close()
 	{
-		if (!get_platform().close())
+		if ( !get_platform().close() )
 			return false;
 
-		if (!m_pimpl->gfx.close())
+		if ( !m_pimpl->gfx.close() )
 			return false;
 
 		m_pimpl->initialized = false;
 		return true;
 	}
 
-	void engine::do_frame(float delta_t)
+	void engine::do_frame( float delta_t )
 	{
-		//TODO! :)
+		// TODO! :)
 	}
 
 	void engine::run()
 	{
 		const double min_delta_t = 1.0 / 240.0;
-		double starttime = get_time_s();
-		while (true)
+		double       starttime   = get_time_s();
+		while ( true )
 		{
-			if (!get_platform().process_messages())
+			if ( !get_platform().process_messages() )
 				break;
 
 			double delta_t = get_time_s() - starttime;
 
-			//spin until we hit min_delta_t
-			while (delta_t < min_delta_t)
+			// spin until we hit min_delta_t
+			while ( delta_t < min_delta_t )
 				delta_t = get_time_s() - starttime;
 
 			starttime = get_time_s();
-			do_frame(static_cast<float>(delta_t));
+			do_frame( static_cast<float>( delta_t ) );
 		}
 	}
 
@@ -85,4 +87,4 @@ namespace wd
 		return m_pimpl->platform;
 	}
 
-}//namespace wd
+} // namespace wd

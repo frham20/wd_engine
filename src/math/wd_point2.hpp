@@ -3,28 +3,27 @@
 //////////////////////////////////////////////////////////////////////////
 // point2
 //////////////////////////////////////////////////////////////////////////
-namespace wd 
+namespace wd
 {
 	template<typename T>
 	class point2
 	{
-	public:
+	  public:
 		point2() = default;
-		point2(T x, T y);
-		point2(const point2<T>& other) = default;
-		point2(point2<T>&& other) = default;
+		point2( T x, T y );
+		point2( const point2<T>& other ) = default;
+		point2( point2<T>&& other )      = default;
 
-		point2<T>& operator=(const point2<T>& other) = default;
-		point2<T>& operator=(point2<T>&& other) = default;
+		point2<T>& operator=( const point2<T>& other ) = default;
+		point2<T>& operator=( point2<T>&& other ) = default;
 
-		T& operator[](int index);
-		T operator[](int index) const;
+		T& operator[]( int index );
+		T operator[]( int index ) const;
 
-	public:
+	  public:
 		T x;
 		T y;
 	};
-
 
 	typedef point2<int8>  point2i8;
 	typedef point2<int16> point2i16;
@@ -46,22 +45,21 @@ namespace wd
 namespace wd
 {
 	template<typename T>
-	inline point2<T>::point2(T _x, T _y) :
-		x(_x),
-		y(_y)
+	inline point2<T>::point2( T _x, T _y )
+	    : x( _x )
+	    , y( _y )
 	{
-
 	}
 
 	template<typename T>
-	inline T& point2<T>::operator[](int index)
+	inline T& point2<T>::operator[]( int index )
 	{
-		return static_cast<T*>(&x)[index];
+		return static_cast<T*>( &x )[index];
 	}
 
 	template<typename T>
-	inline T point2<T>::operator[](int index) const
+	inline T point2<T>::operator[]( int index ) const
 	{
-		return static_cast<const T*>(&x)[index];
+		return static_cast<const T*>( &x )[index];
 	}
 }

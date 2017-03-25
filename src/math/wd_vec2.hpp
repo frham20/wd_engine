@@ -3,45 +3,55 @@
 //////////////////////////////////////////////////////////////////////////
 // vec2
 //////////////////////////////////////////////////////////////////////////
-namespace wd 
+namespace wd
 {
 	template<typename T>
 	class vec2
 	{
-	public:
+	  public:
 		vec2() = default;
-		vec2(T x, T y);
-		vec2(const vec2<T>& other) = default;
-		vec2(vec2<T>&& other) = default;
+		vec2( T x, T y );
+		vec2( const vec2<T>& other ) = default;
+		vec2( vec2<T>&& other )      = default;
 
-		vec2<T>& operator=(const vec2<T>& other) = default;
-		vec2<T>& operator=(vec2<T>&& other) = default;
+		vec2<T>& operator=( const vec2<T>& other ) = default;
+		vec2<T>& operator=( vec2<T>&& other ) = default;
 
-		T& operator[](int index);
-		T operator[](int index) const;
+		T& operator[]( int index );
+		T operator[]( int index ) const;
 
-		vec2<T>& operator+=(const vec2<T>& other);
-		vec2<T>& operator-=(const vec2<T>& other);
-		vec2<T>& operator*=(const vec2<T>& other);
-		vec2<T>& operator*=(float k);
-		vec2<T>& operator/=(const vec2<T>& other);
-		vec2<T>& operator/=(float k);
+		vec2<T>& operator+=( const vec2<T>& other );
+		vec2<T>& operator-=( const vec2<T>& other );
+		vec2<T>& operator*=( const vec2<T>& other );
+		vec2<T>& operator*=( float k );
+		vec2<T>& operator/=( const vec2<T>& other );
+		vec2<T>& operator/=( float k );
 
-	public:
+	  public:
 		T x;
 		T y;
 	};
 
-	template<typename T> T       length(const vec2<T>& v0);
-	template<typename T> T       length_sqr(const vec2<T>& v0);
-	template<typename T> T       dot(const vec2<T>& v0, const vec2<T>& v1);
-	template<typename T> vec2<T> normalize(const vec2<T>& v0);
-	template<typename T> vec2<T> operator+(const vec2<T>& v0, const vec2<T>& v1);
-	template<typename T> vec2<T> operator-(const vec2<T>& v0, const vec2<T>& v1);
-	template<typename T> vec2<T> operator*(const vec2<T>& v0, float k);
-	template<typename T> vec2<T> operator*(float k, const vec2<T>& v0);
-	template<typename T> vec2<T> operator/(const vec2<T>& v0, float k);
-	template<typename T> vec2<T> operator/(float k, const vec2<T>& v0);
+	template<typename T>
+	T length( const vec2<T>& v0 );
+	template<typename T>
+	T length_sqr( const vec2<T>& v0 );
+	template<typename T>
+	T dot( const vec2<T>& v0, const vec2<T>& v1 );
+	template<typename T>
+	vec2<T> normalize( const vec2<T>& v0 );
+	template<typename T>
+	vec2<T> operator+( const vec2<T>& v0, const vec2<T>& v1 );
+	template<typename T>
+	vec2<T> operator-( const vec2<T>& v0, const vec2<T>& v1 );
+	template<typename T>
+	vec2<T> operator*( const vec2<T>& v0, float k );
+	template<typename T>
+	vec2<T> operator*( float k, const vec2<T>& v0 );
+	template<typename T>
+	vec2<T> operator/( const vec2<T>& v0, float k );
+	template<typename T>
+	vec2<T> operator/( float k, const vec2<T>& v0 );
 
 	typedef vec2<float>  vec2f;
 	typedef vec2<double> vec2d;
@@ -61,9 +71,9 @@ namespace wd
 namespace wd
 {
 	template<typename T>
-	inline vec2<T>::vec2(T _x, T _y) :
-		x(_x),
-		y(_y)
+	inline vec2<T>::vec2( T _x, T _y )
+	    : x( _x )
+	    , y( _y )
 	{
 	}
 }

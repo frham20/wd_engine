@@ -1,27 +1,29 @@
-#include "wd.hpp"
 #include "wd_window.hpp"
+#include "wd.hpp"
 
-namespace wd 
+namespace wd
 {
 	struct window::imp
 	{
-		imp(window& owner) : platform(owner) {}
+		imp( window& owner )
+		    : platform( owner )
+		{
+		}
 		window_platform platform;
 	};
 
-	window::window() :
-		m_pimpl(new imp(*this))
+	window::window()
+	    : m_pimpl( new imp( *this ) )
 	{
 	}
 
 	window::~window()
 	{
-
 	}
 
-	bool window::init(const char* title, const recti& region)
+	bool window::init( const char* title, const recti& region )
 	{
-		return get_platform().init(title, region);
+		return get_platform().init( title, region );
 	}
 
 	const char* window::get_title() const
@@ -34,14 +36,14 @@ namespace wd
 		return get_platform().get_region();
 	}
 
-	void window::set_region(const recti& region)
+	void window::set_region( const recti& region )
 	{
-		get_platform().set_region(region);
+		get_platform().set_region( region );
 	}
 
-	void window::set_title(const char* title)
+	void window::set_title( const char* title )
 	{
-		get_platform().set_title(title);
+		get_platform().set_title( title );
 	}
 
 	bool window::is_visible() const
@@ -49,9 +51,9 @@ namespace wd
 		return get_platform().is_visible();
 	}
 
-	void window::set_visible(bool state)
+	void window::set_visible( bool state )
 	{
-		get_platform().set_visible(state);
+		get_platform().set_visible( state );
 	}
 
 	window_platform& window::get_platform()

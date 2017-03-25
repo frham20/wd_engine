@@ -4,8 +4,8 @@ namespace wd
 {
 	class engine_platform : private noncopyable
 	{
-	public:
-		explicit engine_platform(engine& owner);
+	  public:
+		explicit engine_platform( engine& owner );
 
 		bool init();
 		bool close();
@@ -13,7 +13,7 @@ namespace wd
 
 		static HINSTANCE get_hinstance();
 
-	private:
+	  private:
 		engine& m_owner;
 	};
 }
