@@ -1,5 +1,5 @@
-#include "wd_window.hpp"
-#include "wd.hpp"
+#include "wd_window.h"
+#include "wd.h"
 
 namespace wd
 {

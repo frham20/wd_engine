@@ -1,5 +1,5 @@
-#include "wd.hpp"
-#include "wd_gfx_physical_device_vk.hpp"
+#include "wd.h"
+#include "wd_gfx_physical_device_vk.h"
 
 namespace wd
 {
@@ -8,6 +8,7 @@ namespace wd
 	{
 		vkGetPhysicalDeviceProperties( m_handle, &m_properties );
 		vkGetPhysicalDeviceFeatures( m_handle, &m_features );
+
 		uint32 queue_count = 0;
 		vkGetPhysicalDeviceQueueFamilyProperties( m_handle, &queue_count, nullptr );
 		m_queue_families.resize( queue_count );

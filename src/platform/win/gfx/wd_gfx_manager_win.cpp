@@ -1,5 +1,5 @@
-#include "wd.hpp"
-#include "platform/shared/vulkan/wd_gfx_physical_device_vk.hpp"
+#include "wd.h"
+#include "platform/shared/vulkan/wd_gfx_physical_device_vk.h"
 
 namespace wd
 {

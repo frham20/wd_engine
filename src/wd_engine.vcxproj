@@ -96,7 +96,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WD_ENGINE;WD_ENGINE_EXPORTS;WD_TARGET_DYNAMIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
@@ -112,7 +112,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WD_ENGINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
@@ -137,7 +137,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WD_ENGINE;WD_ENGINE_EXPORTS;WD_TARGET_DYNAMIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
@@ -157,7 +157,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WD_ENGINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <PrecompiledHeaderFile>wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>wd.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalIncludeDirectories>$(VULKAN_SDK)\Include; $(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
@@ -178,38 +178,38 @@
     <ClCompile Include="gfx\wd_window.cpp" />
     <ClCompile Include="platform\win\gfx\wd_window_win.cpp" />
     <ClCompile Include="platform\win\wd_win.cpp" />
-    <ClInclude Include="core\wd_event.hpp" />
-    <ClInclude Include="core\wd_noncopyable.hpp" />
-    <ClInclude Include="core\wd_engine.hpp" />
+    <ClInclude Include="core\wd_event.h" />
+    <ClInclude Include="core\wd_noncopyable.h" />
+    <ClInclude Include="core\wd_engine.h" />
     <ClCompile Include="wd_pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">wd.hpp</PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">wd.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">wd.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">wd.hpp</PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">wd.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">wd.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">wd.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core\wd_timer.hpp" />
-    <ClInclude Include="core\wd_types.hpp" />
-    <ClInclude Include="gfx\wd_gfx_manager.hpp" />
-    <ClInclude Include="math\wd_math.hpp" />
-    <ClInclude Include="math\wd_vec3.hpp" />
-    <ClInclude Include="platform\shared\vulkan\wd_gfx_physical_device_vk.hpp" />
-    <ClInclude Include="platform\win\wd_engine_win.hpp" />
-    <ClInclude Include="platform\win\gfx\wd_gfx_manager_win.hpp" />
-    <ClInclude Include="platform\win\wd_timer_win.hpp" />
-    <ClInclude Include="gfx\wd_window.hpp" />
-    <ClInclude Include="platform\win\gfx\wd_window_win.hpp" />
-    <ClInclude Include="math\wd_point2.hpp" />
-    <ClInclude Include="math\wd_rect.hpp" />
-    <ClInclude Include="math\wd_vec2.hpp" />
-    <ClInclude Include="platform\win\wd_win_imp.hpp" />
-    <ClInclude Include="wd.hpp" />
-    <ClInclude Include="platform\win\wd_win.hpp" />
+    <ClInclude Include="core\wd_timer.h" />
+    <ClInclude Include="core\wd_types.h" />
+    <ClInclude Include="gfx\wd_gfx_manager.h" />
+    <ClInclude Include="math\wd_math.h" />
+    <ClInclude Include="math\wd_vec3.h" />
+    <ClInclude Include="platform\shared\vulkan\wd_gfx_physical_device_vk.h" />
+    <ClInclude Include="platform\win\wd_engine_win.h" />
+    <ClInclude Include="platform\win\gfx\wd_gfx_manager_win.h" />
+    <ClInclude Include="platform\win\wd_timer_win.h" />
+    <ClInclude Include="gfx\wd_window.h" />
+    <ClInclude Include="platform\win\gfx\wd_window_win.h" />
+    <ClInclude Include="math\wd_point2.h" />
+    <ClInclude Include="math\wd_rect.h" />
+    <ClInclude Include="math\wd_vec2.h" />
+    <ClInclude Include="platform\win\wd_win_imp.h" />
+    <ClInclude Include="wd.h" />
+    <ClInclude Include="platform\win\wd_win.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
