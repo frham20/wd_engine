@@ -4,7 +4,9 @@ namespace wd
 	class noncopyable
 	{
 	  protected:
-		noncopyable() = default;
+		noncopyable()                = default;
+		noncopyable( noncopyable&& ) = default;
+		noncopyable& operator=( noncopyable&& ) = default;
 
 	  private:
 		noncopyable( const noncopyable& ) = delete;
